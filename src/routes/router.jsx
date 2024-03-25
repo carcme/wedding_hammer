@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "./Home";
+import BgImage from "./BgImage";
 import About from "./About";
 import Contact from "./Contact";
 import Error from "./Error";
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/image",
+        element: <BgImage />,
       },
       {
         path: "/about",

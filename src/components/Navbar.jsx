@@ -5,8 +5,11 @@ import { FaRegCalendarAlt, FaEnvelope } from "react-icons/fa";
 import Logo from "../assets/hammer3_logo.svg";
 import navbarLinks from "../data/navbarLinks";
 import useScrollPosition from "../hooks/useScrollPosition";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { i18n, t } = useTranslation();
+
   const [isOpen, setOpen] = useState(false);
 
   const scrollPosition = useScrollPosition();
@@ -15,9 +18,7 @@ const Navbar = () => {
     <div
       className={`flex fixed justify-between items-center h-16 xl:px-40 mx-auto px-2 text-white 
        top-0 z-50 w-full transition-colors ease-in-out duration-700
-      ${
-        scrollPosition < 100 && !isOpen ? "bg-transparent" : "bg-[#151515]/95"
-      } `}
+      ${scrollPosition < 100 && !isOpen ? "bg-[#151515]" : "bg-[#151515]/95"} `}
     >
       {/* Logo */}
       <Link to="/" className="pl-4 sm:pl-12">
@@ -37,7 +38,7 @@ const Navbar = () => {
                 isActive ? "relative text-white" : "relative"
               }
             >
-              {item.text}
+              {t(item.text)}
             </NavLink>
           </li>
         ))}

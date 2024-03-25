@@ -4,6 +4,10 @@ const navbarLinks = [
     text: "home",
   },
   {
+    path: "/image",
+    text: "image",
+  },
+  {
     path: "/about",
     text: "about",
   },

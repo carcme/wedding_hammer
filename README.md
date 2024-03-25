@@ -5,6 +5,7 @@
 - Vite (React)
 - react-router-dom
 - react-icons
+- hamburger-react
 - Tailwind
 - FramerMotion
 
