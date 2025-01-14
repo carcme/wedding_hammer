@@ -1,32 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ImageCard from "../components/ImageCard";
+
+import Hero from "../components/Hero";
+import HeroSection from "../components/HeroSection";
+import WhyUs from "../components/WhyUs";
+import HeroSplit from "../components/HeroSplit";
 
 const Home = () => {
-  console.log("Home page");
+  const title = "A Gathering Together";
+  const subTitle = "Your events venue just 30mins from Schonefeld airport";
+  const blendMode = true;
+
   return (
     <>
-      <section
-        className="relative flex h-screen bg-cover shadow-2xl "
-        style={{
-          background: `url(https://source.unsplash.com/1600x900/?nature)`,
-          boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.3)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="flex flex-col items-center justify-center w-full h-screen text-white">
-          <h1 className="text-4xl font-bold text-center">Home Page</h1>
-          <p className="p-6 text-xl text-center">
-            Dynamic image load... should probably change it :o
-          </p>
-          <Link
-            to="/image"
-            className="px-4 py-2 text-white bg-purple-500 rounded-md hover:bg-purple-700"
-          >
-            Start Now
-          </Link>
-        </div>
-      </section>
+      <HeroSplit />
+      {/* <Hero
+        image="/assets/image/fridge.webp"
+        title={title}
+        subTitle={subTitle}
+        blendMode={blendMode}
+      /> */}
+      {/* <HeroSection /> */}
+      <ImageCard
+        image="/assets/image/forest_wedding.webp"
+        blendMode={blendMode}
+      />
+      <WhyUs />
     </>
   );
 };

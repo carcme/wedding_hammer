@@ -1,56 +1,95 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Spin as Hamburger } from "hamburger-react";
 import { FaRegCalendarAlt, FaEnvelope } from "react-icons/fa";
-import Logo from "../assets/hammer3_logo.svg";
-import navbarLinks from "../data/navbarLinks";
+import Logo from "../assets/logo/hammer3_logo.svg";
+import LinksData from "../data/navbarLinks";
 import useScrollPosition from "../hooks/useScrollPosition";
-import { useTranslation } from "react-i18next";
+import {
+  getLanguage,
+  useLanguage,
+  useLanguageChange,
+} from "../LanguageContext";
 
 const Navbar = () => {
-  const { i18n, t } = useTranslation();
+  const menuRef = useRef();
+  const language = useLanguage();
+  const changeLanguage = useLanguageChange();
+  const navbarLinks = getLanguage(LinksData);
 
   const [isOpen, setOpen] = useState(false);
 
   const scrollPosition = useScrollPosition();
 
+  useEffect(() => {
+    let handler = (e) => {
+      if (isOpen && !menuRef.current.contains(e.target)) {
+        item;
+        setOpen(false);
+        console.log("closing menu");
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
   return (
     <div
-      className={`flex fixed justify-between items-center h-16 xl:px-40 mx-auto px-2 text-white 
+      className={`flex fixed justify-between items-center h-24 xl:px-40 mx-auto px-2 text-white 
        top-0 z-50 w-full transition-colors ease-in-out duration-700
-      ${scrollPosition < 100 && !isOpen ? "bg-[#151515]" : "bg-[#151515]/95"} `}
+      ${
+        scrollPosition < 100 && !isOpen ? "bg-primaryGreen" : "bg-primaryGreen"
+      } `}
     >
       {/* Logo */}
       <Link to="/" className="pl-4 sm:pl-12">
         <img
           src={Logo}
           alt="hammer3-logo"
-          className="rounded-full h-14 w-14 hover:text-red-900 "
+          className="rounded-full h-14 w-14 hover:scale-110"
         />
       </Link>{" "}
       {/* Desktop Navigation */}
-      <ul className="hidden hover-diagonal-line md:flex text-neutral-500">
+      <button
+        className="hidden ml-10 transition duration-300 md:flex hover:cursor-pointer"
+        aria-label="language"
+        onClick={changeLanguage}
+      >
+        <span
+          className={`py-[14px] fi fib ${
+            language === "de" ? "fi-gb" : "fi-de"
+          }`}
+        ></span>
+      </button>
+      <ul className="relative hidden text-primaryHoneyDew hover-diagonal-line md:flex">
         {navbarLinks.map((item, index) => (
-          <li key={index} className="p-4 m-2 duration-300 cursor-pointer ">
+          <li
+            key={index}
+            className="p-4 m-2 capitalize duration-300 cursor-pointer "
+          >
             <NavLink
               to={item.path}
               className={({ isActive }) =>
-                isActive ? "relative text-white" : "relative"
+                isActive
+                  ? "relative before:content-[''] before:block before:absolute before:-top-2 before:left-0 before:w-full before:h-0.5 before:rounded-full before:bg-primaryGreenDark"
+                  : "relative "
               }
             >
-              {t(item.text)}
+              {item.text}
             </NavLink>
           </li>
         ))}
       </ul>
       <div
         id="big-nav-buttons"
-        className="flex justify-end flex-grow px-4 mb-4 text-white"
+        className="flex justify-end flex-grow pr-4 space-x-4 text-white "
       >
-        <div className="items-end mt-4 space-x-4">
+        <div className="items-end space-x-4">
           <Link to="/mystery">
             <button
-              className="bg-transparent hover:bg-[#404040] border-[#404040] border-2 p-3 rounded-full transition duration-300 hover:cursor-pointer"
+              className="p-3 transition duration-300 bg-transparent border-2 rounded-full hover:bg-primaryGreenDark border-primaryGreenDark hover:cursor-pointer"
               aria-label="Show mysteries"
             >
               <FaRegCalendarAlt size={16} color="#ddd" />
@@ -58,7 +97,7 @@ const Navbar = () => {
           </Link>
           <Link to="/contact">
             <button
-              className="bg-[#404040] hover:bg-transparent/20 border-[#404040] border-2 p-3 rounded-full transition duration-300 hover:cursor-pointer"
+              className="p-3 transition duration-300 border-2 rounded-full bg-primaryGreenDark hover:bg-transparent/20 border-primaryGreenDark hover:cursor-pointer"
               aria-label="Contact"
             >
               <FaEnvelope size={16} color="#ddd" />
@@ -67,16 +106,24 @@ const Navbar = () => {
         </div>
       </div>
       {/* Mobile Navigation Icon */}
-      <div className="block transition duration-700 ease-in-out md:hidden">
-        <Hamburger toggled={isOpen} toggle={setOpen} color="#aaa" size={20} />
+      <div
+        ref={menuRef}
+        className="block transition duration-700 ease-in-out md:hidden"
+      >
+        <Hamburger
+          toggled={isOpen}
+          toggle={setOpen}
+          color="#EBF5DF"
+          size={20}
+        />
       </div>
       {/* Mobile Navigation Menu */}
       <ul
-        className={`top-[64px] md:hidden left-0 w-[60%] p-10 bg-[#151515]/95 text-neutral-500 fixed
+        className={`top-[64px] md:hidden left-0 w-[60%] p-10 bg-primaryGreen text-primaryHoneyDew fixed
            h-full z-50 ease-in-out duration-700 
         ${
           isOpen
-            ? "translate-x-0 bg-[#151515]/95"
+            ? "translate-x-0 bg-primaryGreen"
             : "-translate-x-full bg-transparent"
         }`}
       >
@@ -87,11 +134,19 @@ const Navbar = () => {
             key={index}
             className={({ isActive }) => (isActive ? " text-white " : "")}
           >
-            <li className="z-50 p-4 duration-300 border-b cursor-pointer hover:border-red-700 hover:font-extrabold hover:text-white border-neutral-500">
+            <li className="z-50 p-4 duration-300 border-b cursor-pointer hover:border-b-primaryGreenDark hover:font-extrabold">
               {item.text}
             </li>
           </NavLink>
         ))}
+        <button
+          className="z-50 p-4 duration-300 cursor-pointer "
+          aria-label="language"
+          onClick={changeLanguage}
+        >
+          {language === "de" && <span className="fi fi-gb fib"></span>}
+          {language === "en" && <span className="fi fi-de fib"></span>}
+        </button>
       </ul>
     </div>
   );

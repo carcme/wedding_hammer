@@ -1,8 +1,8 @@
 import React from "react";
-import image from "@/assets/forestHero.jpg";
+import image from "@/assets/image/forestHero.jpg";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const BgImage = () => {
   console.log("Home page");
   return (
     <>
@@ -10,7 +10,7 @@ const Home = () => {
         className="relative w-full h-screen bg-cover color-white"
         style={{
           background: `url(${image})`,
-          boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.5)",
+          boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.4)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -35,7 +35,7 @@ const Home = () => {
         </div>
 
         {/* <div className="flex flex-col items-center justify-center w-full h-screen text-white">
-          <div class="grid grid-cols-2 place-content-stretch h-48 text-white">
+          <div className="grid h-48 grid-cols-2 text-white place-content-stretch">
             <div className="invisible">01</div>
             <div className="invisible">02</div>
             <div className="invisible">03</div>
@@ -58,4 +58,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default BgImage;

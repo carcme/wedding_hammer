@@ -3,6 +3,11 @@ import React, { createContext, useState } from "react";
 const LanguageContext = createContext();
 const LanguageChangeContext = createContext();
 
+export function getLanguage(script) {
+  const language = React.useContext(LanguageContext);
+  return language === "en" ? script.en : script.de;
+}
+
 export function useLanguage() {
   return React.useContext(LanguageContext);
 }
@@ -15,7 +20,7 @@ export function LanguageProvider({ children }) {
   const [language, setLanguage] = useState("en");
 
   function changeLanguage(lang) {
-    setLanguage(lang);
+    setLanguage(language === "en" ? "de" : "en");
   }
 
   return (
