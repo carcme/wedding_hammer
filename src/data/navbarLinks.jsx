@@ -5,24 +5,20 @@ const navbarLinks = {
       text: "home",
     },
     {
-      path: "/pricing",
-      text: "pricing",
+      path: "/booking",
+      text: "booking",
     },
     {
-      path: "/about",
-      text: "about",
+      path: "/vendor",
+      text: "vendors",
     },
     {
       path: "/gallery",
       text: "gallery",
     },
     {
-      path: "/temp",
-      text: "temp",
-    },
-    {
-      path: "/vendor",
-      text: "vendors",
+      path: "/about",
+      text: "about",
     },
   ],
   de: [
@@ -31,28 +27,20 @@ const navbarLinks = {
       text: "Startseite",
     },
     {
-      path: "/prices",
-      text: "pricing",
-    },
-    {
-      path: "/about",
-      text: "About",
-    },
-    {
-      path: "/gallery",
-      text: "Galerie",
-    },
-    {
-      path: "/temp",
-      text: "temp",
+      path: "/booking",
+      text: "booking",
     },
     {
       path: "/vendor",
       text: "vendors",
     },
     {
-      path: "/rentals",
-      text: "rentals",
+      path: "/gallery",
+      text: "Galerie",
+    },
+    {
+      path: "/about",
+      text: "About",
     },
   ],
 };

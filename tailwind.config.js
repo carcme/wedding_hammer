@@ -2,6 +2,13 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
         Montserrat: ["Montserrat"],
@@ -10,6 +17,7 @@ export default {
         Alegreya: ["Alegreya"],
         English: ["IM Fell English"],
         Cormorant: ["Cormorant Garamond"],
+        Lora: ["Lora"],
       },
       colors: {
         accentDecoration: "#566E3D",

@@ -1,36 +1,47 @@
 import React from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import SplitImage from "./SplitImage";
+import { Link } from "react-router-dom";
+import homeData from "../data/homeData";
+import { getLanguage } from "../LanguageContext";
 
 const HeroSplit = () => {
+  const data = getLanguage(homeData);
+
   return (
     <div className="pt-24 pb-6 bg-almostWhite lg:pt-44 sm:pb-8 lg:pb-12">
       <div className="px-4 mx-auto max-w-screen-2xl md:px-8">
         <section className="flex flex-col justify-between gap-6 mb-8 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
-          {/* <!-- content - start --> */}
           <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
             <p className="my-4 font-semibold text-primaryGreen md:mb-6 md:text-lg xl:text-xl">
-              Celebrate Among the Trees
+              {data.teaser}
             </p>
 
-            <h1 className="mb-8 text-3xl font-bold text-black sm:text-5xl md:mb-12 md:text-6xl">
-              In the heart of Dahme-Spreewald
+            <h1 className="max-w-xl mb-8 font-serif text-4xl font-medium tracking-wide text-gray-800 capitalize md:text-6xl">
+              {data.title}
             </h1>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-              <a
-                href="#"
-                className="inline-block px-8 py-3 text-sm font-semibold text-center text-white transition duration-100 rounded-lg outline-none bg-primaryGreenLight ring-primaryGreen ring-2 hover:bg-primaryGreen focus-visible:ring active:bg-primaryGreenDark md:text-base"
+              <Link
+                to="/booking"
+                className="inline-block px-8 py-3 text-sm font-semibold text-center transition duration-100 rounded-lg outline-none text-almostWhite bg-primaryGreen ring-primaryGreen ring-2 hover:bg-primaryGreenLight focus-visible:ring active:bg-primaryGreenLight md:text-base"
               >
-                Check Availability
-              </a>
+                {data.btn1}
+              </Link>
 
-              <a
-                href="#"
-                className="inline-block px-8 py-3 text-sm font-semibold text-center text-gray-500 transition duration-100 bg-gray-300 rounded-lg outline-none ring-2 ring-primaryGreenDark hover:bg-primaryGreenDark hover:text-white focus-visible:ring active:text-primaryGreenDark md:text-base"
+              <Link
+                to={"/contact"}
+                className="inline-block px-8 py-3 text-sm font-semibold text-center transition duration-100 rounded-lg outline-none bg-almostWhite text-primaryGreen ring-2 ring-primaryGreenDark hover:bg-primaryGreen hover:text-white focus-visible:ring active:text-primaryGreen md:text-base"
               >
-                Book a Tour
-              </a>
+                {data.btn2}
+              </Link>
+
+              {/* <Link
+                href="#"
+                class="border-2 text-sm duration-300 transition-colors hover:bg-[#475F45] hover:text-white font-bold leading-4 mt-4 sm:mt-0 tracking-widest text-[#475F45] sm:mx-4 border-[#475F45] px-6 block text-center py-3 uppercase"
+              >
+                Learn More
+              </Link> */}
             </div>
           </div>
           {/* <!-- content - end --> */}
@@ -53,25 +64,25 @@ const HeroSplit = () => {
           <div className="grid grid-cols-2 gap-4 -mx-6 md:-mx-8 md:flex md:divide-x">
             <div className="px-6 md:px-8">
               <span className="block text-lg font-bold text-center text-primaryGreen md:text-xl">
-                80
+                {data.capacity}
               </span>
               <span className="block text-sm font-semibold text-center text-gray-800 md:text-base">
-                Capacity
+                {data.capacityTitle}
               </span>
             </div>
 
             <div className="px-6 md:px-8">
               <span className="block text-lg font-bold text-center text-primaryGreen md:text-xl">
-                Prices
+                {data.pricesTitle}
               </span>
               <span className="block text-sm font-semibold text-center text-gray-800 md:text-base">
-                from 2000€
+                {data.prices}
               </span>
             </div>
 
             <div className="px-6 md:px-8">
               <span className="block text-lg font-bold text-center text-primaryGreen md:text-left md:text-xl">
-                Area
+                {data.areaTitle}
               </span>
               <span className="block text-sm font-semibold text-center text-gray-800 md:text-left md:text-base">
                 1600 m<sup>2</sup>
@@ -80,10 +91,10 @@ const HeroSplit = () => {
 
             <div className="px-6 md:px-8">
               <span className="block text-lg font-bold text-center text-primaryGreen md:text-left md:text-xl">
-                Something Here
+                {data.somethingTitle}
               </span>
               <span className="block text-sm font-semibold text-center text-gray-800 md:text-left md:text-base">
-                Or Delete
+                {data.something}
               </span>
             </div>
           </div>
@@ -92,7 +103,7 @@ const HeroSplit = () => {
           {/* <!-- social - start --> */}
           <div className="flex items-center justify-center gap-4 lg:justify-start">
             <span className="text-sm font-semibold tracking-widest text-gray-400 uppercase sm:text-base">
-              Social
+              {data.social}
             </span>
             <span className="w-12 h-px bg-gray-200"></span>
 
@@ -102,8 +113,7 @@ const HeroSplit = () => {
                 <span className="inner"></span>
                 <FaInstagram
                   size={20}
-                  className="relative z-[1] hover:text-primaryGreen"
-                  color="#9ca3af"
+                  className="relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
                 />
               </a>
               {/* twitter */}
@@ -111,16 +121,14 @@ const HeroSplit = () => {
                 <span className="inner"></span>
                 <FaTwitter
                   size={20}
-                  className="relative z-[1]"
-                  color="#9ca3af"
+                  className="relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
                 />
               </a>
               <a href="#">
                 <span className="inner"></span>
                 <FaYoutube
                   size={20}
-                  className="relative z-[1]"
-                  color="#9ca3af"
+                  className="relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
                 />
               </a>
               {/* linkdin */}

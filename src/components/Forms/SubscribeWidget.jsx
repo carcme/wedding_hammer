@@ -146,9 +146,18 @@ const SubscribeWidget = ({ source }) => {
       <div className="mx-0 max-w-screen-sm text-[12px] text-left newsletter-form-footer text-[#717171]">
         <p>{text.weCare}</p>
         <p className="group">
-          <Link to={"/privacy-policy"} className="font-medium hover:underline">
+          <Link
+            to={
+              "https://www.termsfeed.com/live/e603faa6-c19c-4be8-92c2-06deaaf42075"
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium hover:underline"
+          >
             {text.readOur}{" "}
-            <span className="group-hover:text-white">{text.privacyPolicy}</span>
+            <span className="group-hover:text-primaryGreen hover:font-bold">
+              {text.privacyPolicy}
+            </span>
           </Link>
           .
         </p>

@@ -14,7 +14,7 @@ const WhyUs = () => {
 
         {text.items.map((item, index) => (
           <div key={index} className="flex flex-wrap items-center text-left ">
-            <div className="w-full md:w-3/5 lg:w-1/2">
+            <div className="w-full mt-20 md:w-3/5 lg:w-1/2">
               <img
                 src={item.img}
                 alt="gem"

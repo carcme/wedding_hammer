@@ -1,7 +1,8 @@
 const vendorsList = {
   en: {
-    title: "",
-    subTitle: "",
+    title: "Recommended Vendors",
+    subTitle:
+      "Wedding vendors are an important part of your event. We have developed a list of recommended vendors for our venue.",
     sections: [
       {
         id: "0",

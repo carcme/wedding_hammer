@@ -5,8 +5,8 @@ const WhyUs = () => {
   const text = whyUsData.en;
   return (
     <>
-      <div className="container p-4 pt-20 mx-auto text-center ">
-        <h1 className="p-4 text-4xl tracking-widest fon t-normal lg:text-6xl font-Alegreya">
+      <div className="container pt-20 mx-auto text-center ">
+        <h1 className="text-4xl font-normal tracking-widest lg:text-6xl font-Alegreya">
           {text.title}
         </h1>
 

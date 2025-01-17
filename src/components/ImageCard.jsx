@@ -49,7 +49,7 @@ const ImageCard = ({ image, blendMode }) => {
             <p className="p-4 text-base font-light sm:px-20 font-Montserrat">
               The Hammer Barn blends rustic charm and German elegance so
               seamlessly your guests will ask, “How did you ever find this
-              place?”
+              place?
             </p>
           </div>
         </div>
@@ -68,15 +68,14 @@ const ImageCard = ({ image, blendMode }) => {
               Personality
             </h1>
             <p className="px-2 py-4 text-base font-light sm:px-20 font-Montserrat">
-              There is no such thing as a “standard wedding” here at The Farm.
-              Each of our weddings has its own personality drawing on the
-              couple's history, their families, their futures and their
-              traditions.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
+              velit neque! Beatae reprehenderit voluptatem error minima. Et modi
+              iste necessitatibus tempore totam quisquam eius soluta?
             </p>
             <p className="px-2 py-4 text-base font-light sm:px-20 font-Montserrat">
-              With our licensed Wedding Coordinators and a stable of tried and
-              trusted local vendors, we can help you bring your vision to life.
-              This will allow you to sit back and enjoy your day.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
+              velit neque! Beatae reprehenderit voluptatem error minima. Et modi
+              iste necessitatibus tempore totam quisquam eius soluta?
             </p>
           </div>
         </div>

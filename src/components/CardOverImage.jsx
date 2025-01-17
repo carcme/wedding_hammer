@@ -7,7 +7,7 @@ const CardOverImage = () => {
 
   return (
     <>
-      <div className="container mx-auto">
+      <div className="container mx-auto ">
         <div className="container p-8 pt-20 mx-auto text-center">
           <h1 className="p-4 text-4xl tracking-widest fon t-normal lg:text-6xl font-Alegreya">
             {text.title}
@@ -28,11 +28,11 @@ const CardOverImage = () => {
                   <div className="hidden lg:block lg:row-span-2 "></div>
 
                   <div className="row-span-8 bg-red">
-                    <div className="w-full p-4 bg-white shadow-2xl">
-                      <div className="flex justify-between text-xl font-Amatic">
+                    <div className="w-full p-4 bg-almostWhite">
+                      {/* <div className="flex justify-between text-xl font-Amatic">
                         <p>Product Review</p>
                         <p className="text-gray-700">17th March, 2021</p>
-                      </div>
+                      </div> */}
                       <h2 className="mt-4 text-3xl font-semibold md:mt-10">
                         {item.title}
                       </h2>
@@ -45,7 +45,7 @@ const CardOverImage = () => {
                           {paragraph}
                         </p>
                       ))}
-                      <button className="p-3 px-5 mt-2 text-sm font-bold md:mt-5 bg-primaryGoldSatin text-primaryGreenDark hover:bg-purple-800">
+                      <button className="p-3 px-5 mt-2 text-sm font-bold rounded-md md:mt-5 bg-almostWhite text-primaryGreenDark hover:bg-primaryGreen hover:text-almostWhite">
                         Read More
                       </button>
                     </div>

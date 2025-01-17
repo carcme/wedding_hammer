@@ -1,6 +1,9 @@
 import React from "react";
+import { useLanguage, useLanguageChange } from "../LanguageContext";
 
 const Pricing = () => {
+  const lang = useLanguage();
+  const langChange = useLanguageChange();
   return (
     <>
       <div className="flex flex-col items-center justify-center w-full h-screen gap-4 text-3xl font-bold text-center text-neutral-300">
@@ -8,19 +11,11 @@ const Pricing = () => {
         <div className="flex gap-4 ">
           <button
             onClick={() => {
-              langChange("de");
+              langChange(`${lang} === 'en' ? "de" : "en"`);
             }}
-            className="p-2 text-sm bg-black border hover:bg-white hover:text-black"
+            className="p-2 text-sm border rounded-md bg-primaryGreen hover:bg-white hover:text-primaryGreen"
           >
-            German
-          </button>
-          <button
-            onClick={() => {
-              langChange("en");
-            }}
-            className="p-2 text-sm bg-black border hover:bg-white hover:text-black"
-          >
-            English
+            {lang === "en" ? "Change to DE" : "Change to EN"}
           </button>
         </div>
       </div>

@@ -3,6 +3,7 @@ import App from "../App";
 import Home from "./Home";
 import BgImage from "./BgImage";
 import Pricing from "./Pricing";
+import Booking from "./Booking";
 import About from "./About";
 import Contact from "./Contact";
 import Vendor from "./Vendor";
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/image",
         element: <BgImage />,
+      },
+      {
+        path: "/booking",
+        element: <Booking />,
       },
       {
         path: "/about",

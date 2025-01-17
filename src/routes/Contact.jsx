@@ -1,38 +1,32 @@
-import React, { useContext } from "react";
-import { useLanguage, useLanguageChange } from "../LanguageContext";
-import image from "@/assets/image/greenCarpet.jpg";
+import React, { useEffect } from "react";
+import ContactUs from "../components/Contact/ContactUs";
+import SubscribeComponent from "@/components/Forms/SubscribeComponent";
+import contactUsText from "@/data/contactPageText";
+import { getLanguage } from "@/LanguageContext";
 
-const About = () => {
-  const lang = useLanguage();
-  const langChange = useLanguageChange();
-
-  console.log("Contact page " + lang);
+const Contact = () => {
+  const text = getLanguage(contactUsText);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center w-full h-screen gap-4 text-3xl font-bold text-center text-neutral-300">
-        Contact Page <span className="inline-block text-5xl">{lang}</span>
-        <div className="flex gap-4 ">
-          <button
-            onClick={() => {
-              langChange("de");
-            }}
-            className="p-2 text-sm bg-black border hover:bg-white hover:text-black"
-          >
-            German
-          </button>
-          <button
-            onClick={() => {
-              langChange("en");
-            }}
-            className="p-2 text-sm bg-black border hover:bg-white hover:text-black"
-          >
-            English
-          </button>
+      <div className="section-divider bg-almostWhite">
+        <div className="flex flex-col w-full px-4 pt-40 text-center text-primaryGreen lg:px-40">
+          <h1 className="mb-4 text-2xl font-bold sm:text-5xl animate-bgBlur">
+            {text.title}
+          </h1>
+          <p className="mx-auto text-base font-light leading-relaxed text-gray-600 lg:w-2/3 animate-bgBlur sm:text-xl font-Montserrat">
+            {text.subTitle}
+          </p>
         </div>
       </div>
+      <ContactUs text={text} />
+      <div className=" section-divider bg-almostWhite" />
+      <SubscribeComponent />
     </>
   );
 };
 
-export default About;
+export default Contact;

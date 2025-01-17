@@ -6,8 +6,7 @@ const whyUs = {
       {
         title: "Our Barn Events",
         text: [
-          "Please join us for one (or all) of our special events created just for you.   We have concerts, special dinners, cooking classes and chance to meet Santa.",
-          "Please check back here often for the latest opportunities to visit with your Farm Family.",
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
         ],
         img: "../assets/image/garden_night.webp",
         imgAlt: "?",
@@ -15,8 +14,56 @@ const whyUs = {
       {
         title: "Weddings",
         text: [
-          "There is no such thing as a “standard wedding” here at The Farm; each couple has their personality and their wedding reflects that perfectly. Our licensed Wedding Coordinators and a stable of trusted local vendors will help you bring your vision to life.",
-          "Our facilities are versatile and accommodating, designed to encompass the change of seasons ensuring stunning weddings that embrace the picturesque Blue Ridge mountains. The beautifully manicured property offers an Indoor/Outdoor Event Center, Pavilion, multiple romantic ceremony sites and unique Chef’s Table perfect for rehearsal dinners and wedding brunches",
+          "The Hammer Barn is nestled in a nature reserve and surrounded by forest. We have one neighbour and then 7km to the nearest village.",
+
+          "We host stunning weddings from April to October, offering forest ceremonies just outside Berlin. The barn is set on 1600 sqm, has a kitchen, firepit and stage.",
+
+          "The Hammer Barn blends rustic charm and German elegance so seamlessly your guests will ask, “How did you ever find this place?",
+        ],
+
+        img: "../assets/image/hands_crop.webp",
+        imgAlt: "?",
+      },
+      {
+        title: "Eat in The Kitchen",
+        text: [
+          "The Hammer Barn is nestled in a nature reserve and surrounded by forest. We have one neighbour and then 7km to the nearest village.",
+
+          "We host stunning weddings from April to October, offering forest ceremonies just outside Berlin. The barn is set on 1600 sqm, has a kitchen, firepit and stage.",
+
+          "The Hammer Barn blends rustic charm and German elegance so seamlessly your guests will ask, “How did you ever find this place?",
+        ],
+
+        img: "../assets/image/cake_crop.webp",
+        imgAlt: "?",
+      },
+    ],
+  },
+  de: {
+    title: "why us?",
+    subTitle: "Who are we and what do we do",
+    items: [
+      {
+        title: "Our Barn Events",
+        text: [
+          "The Hammer Barn is nestled in a nature reserve and surrounded by forest. We have one neighbour and then 7km to the nearest village.",
+
+          "We host stunning weddings from April to October, offering forest ceremonies just outside Berlin. The barn is set on 1600 sqm, has a kitchen, firepit and stage.",
+
+          "The Hammer Barn blends rustic charm and German elegance so seamlessly your guests will ask, “How did you ever find this place?",
+        ],
+
+        img: "../assets/image/garden_night.webp",
+        imgAlt: "?",
+      },
+      {
+        title: "Weddings",
+        text: [
+          "The Hammer Barn is nestled in a nature reserve and surrounded by forest. We have one neighbour and then 7km to the nearest village.",
+
+          "We host stunning weddings from April to October, offering forest ceremonies just outside Berlin. The barn is set on 1600 sqm, has a kitchen, firepit and stage.",
+
+          "The Hammer Barn blends rustic charm and German elegance so seamlessly your guests will ask, “How did you ever find this place?",
         ],
         img: "../assets/image/hands_crop.webp",
         imgAlt: "?",
@@ -24,20 +71,15 @@ const whyUs = {
       {
         title: "Eat in The Kitchen",
         text: [
-          "There is no such thing as a “standard wedding” here at The Farm; each couple has their personality and their wedding reflects that perfectly. Our licensed Wedding Coordinators and a stable of trusted local vendors will help you bring your vision to life.",
-          "Our facilities are versatile and accommodating, designed to encompass the change of seasons ensuring stunning weddings that embrace the picturesque Blue Ridge mountains. The beautifully manicured property offers an Indoor/Outdoor Event Center, Pavilion, multiple romantic ceremony sites and unique Chef’s Table perfect for rehearsal dinners and wedding brunches",
+          "The Hammer Barn is nestled in a nature reserve and surrounded by forest. We have one neighbour and then 7km to the nearest village.",
+
+          "We host stunning weddings from April to October, offering forest ceremonies just outside Berlin. The barn is set on 1600 sqm, has a kitchen, firepit and stage.",
+
+          "The Hammer Barn blends rustic charm and German elegance so seamlessly your guests will ask, “How did you ever find this place?",
         ],
+
         img: "../assets/image/cake_crop.webp",
         imgAlt: "?",
-      },
-    ],
-  },
-  de: {
-    items: [
-      {
-        title: "?",
-        text: [""],
-        img: "",
       },
     ],
   },

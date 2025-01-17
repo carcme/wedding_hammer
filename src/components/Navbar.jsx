@@ -24,7 +24,6 @@ const Navbar = () => {
   useEffect(() => {
     let handler = (e) => {
       if (isOpen && !menuRef.current.contains(e.target)) {
-        item;
         setOpen(false);
         console.log("closing menu");
       }
@@ -40,7 +39,9 @@ const Navbar = () => {
       className={`flex fixed justify-between items-center h-24 xl:px-40 mx-auto px-2 text-white 
        top-0 z-50 w-full transition-colors ease-in-out duration-700
       ${
-        scrollPosition < 100 && !isOpen ? "bg-primaryGreen" : "bg-primaryGreen"
+        scrollPosition < 100 && !isOpen
+          ? "bg-primaryGreen"
+          : "bg-primaryGreen/90"
       } `}
     >
       {/* Logo */}
@@ -63,7 +64,8 @@ const Navbar = () => {
           }`}
         ></span>
       </button>
-      <ul className="relative hidden text-primaryHoneyDew hover-diagonal-line md:flex">
+      <ul className="relative hidden text-almostWhite lg:flex">
+        {/* hover-diagonal-line */}
         {navbarLinks.map((item, index) => (
           <li
             key={index}
@@ -73,7 +75,7 @@ const Navbar = () => {
               to={item.path}
               className={({ isActive }) =>
                 isActive
-                  ? "relative before:content-[''] before:block before:absolute before:-top-2 before:left-0 before:w-full before:h-0.5 before:rounded-full before:bg-primaryGreenDark"
+                  ? "relative before:content-[''] before:block before:absolute before:-top-2 before:left-0 before:w-full before:h-0.5 before:rounded-full before:bg-almostWhite"
                   : "relative "
               }
             >
@@ -87,7 +89,7 @@ const Navbar = () => {
         className="flex justify-end flex-grow pr-4 space-x-4 text-white "
       >
         <div className="items-end space-x-4">
-          <Link to="/mystery">
+          <Link to="/booking">
             <button
               className="p-3 transition duration-300 bg-transparent border-2 rounded-full hover:bg-primaryGreenDark border-primaryGreenDark hover:cursor-pointer"
               aria-label="Show mysteries"
