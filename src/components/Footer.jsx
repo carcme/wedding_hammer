@@ -96,7 +96,7 @@ export const Footer = () => {
                   <div className="flex items-center justify-center gap-4 pb-8 lg:justify-start">
                     <div className="flex gap-4">
                       {/* instagram */}
-                      <Link to="#">
+                      <Link to="#" target="_blank">
                         <span className=" hover:text-primaryGreen"></span>
                         <FaInstagram
                           size={20}
@@ -104,21 +104,21 @@ export const Footer = () => {
                         />
                       </Link>
                       {/* twitter */}
-                      <Link to="#">
+                      <Link to="#" target="_blank">
                         <span className="inner"></span>
                         <FaTwitter
                           size={20}
                           className="relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
                         />
                       </Link>
-                      <Link to="#">
+                      <Link to="#" target="_blank">
                         <span className="inner"></span>
                         <FaFacebook
                           size={20}
                           className="relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
                         />
                       </Link>
-                      <Link to="#">
+                      <Link to="#" target="_blank">
                         <span className="inner"></span>
                         <FaYoutube
                           size={20}
@@ -151,46 +151,16 @@ export const Footer = () => {
                       </Link>
                     </div>
                   </div>
-                  {/* <div className="mb-6 ">
-                    <span className="inline-flex mt-4 text-white sm:ml-auto sm:mt-0 sm:justify-start">
-                      <ul className="social">
-                        <li>
-                          <a href="#">
-                            <span className="inner"></span>
-                            <FaFacebook size={16} className="relative z-[1]" />
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <span className="inner"></span>
-                            <FaTwitter size={16} className="relative z-[1]" />
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <span className="inner"></span>
-                            <FaInstagram size={16} className="relative z-[1]" />
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <span className="inner"></span>
-                            <FaYoutube size={16} className="relative z-[1]" />
-                          </a>
-                        </li>
-                      </ul>
-                    </span>
-                  </div> */}
-
                   <SubscribeWidget />
                 </div>
               </div>
             </div>
-            <div className="bg-transparent/80 ">
-              <div className="container flex flex-col items-center px-5 py-6 mx-auto text-sm">
-                <Link to="https://www.hammer3.com">
+            <div className="bg-primaryGreen ">
+              <div className="container flex flex-col items-center px-5 py-6 mx-auto text-sm text-almostWhite">
+                <Link to="https://www.hammer3.com" target="_blank">
                   <p>
-                    © <span>Hammer3 </span> 2024 | All Rights Reserved
+                    © <span className="hover:text-gray-500">Hammer3 </span> 2024
+                    | All Rights Reserved
                   </p>
                 </Link>
               </div>

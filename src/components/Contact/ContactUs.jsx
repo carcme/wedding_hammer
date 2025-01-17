@@ -46,7 +46,7 @@ const ContactUs = ({ text }) => {
   };
 
   return (
-    <section className="relative text-gray-600 body-font bg-almostWhite ">
+    <section className="relative text-gray-600 bg-almostWhite ">
       <div className="container flex flex-wrap max-w-5xl px-5 py-10 mx-auto sm:flex-nowrap">
         <div className="relative flex items-end justify-start w-full p-10 overflow-hidden rounded-lg lg:w-2/3 md:w-1/2 sm:h-auto h-96 sm:mr-10">
           {!mapLoaded && (
@@ -70,8 +70,8 @@ const ContactUs = ({ text }) => {
             onLoad={() => onMapLoaded()}
           ></iframe>
         </div>
-        <div className="flex flex-col w-full mt-8 lg:w-1/3 md:w-1/2 bg-almostWhite md:ml-auto md:py-8 md:mt-0">
-          <h2 className="mb-1 text-lg font-medium text-primaryGreen title-font">
+        <div className="flex flex-col w-full mt-8 lg:w-1/3 md:w-1/2 bg-almostWhite md:ml-auto md:py-8 md:mt-0 ">
+          <h2 className="mb-1 text-lg font-medium text-primaryGreen font-Montserrat">
             {text.contactUsTitle}
           </h2>
           <p className="mb-5 leading-relaxed text-neutral-600">

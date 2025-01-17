@@ -3,10 +3,10 @@ export default function AccordionElement(props) {
 
   return (
     <div className="min-w-full ">
-      <div className="relative flex items-center p-3 border-t border-neutral-300 ">
+      <div className="relative flex items-center border-t border-almostWhite ">
         <div className="absolute w-8 h-8 bg-transparent rounded-full sm:size-16 sm:left-5" />
         <svg
-          className="z-10 mx-2 sm:mx-8 fill-primaryGreenDark shrink-0"
+          className="z-10 mx-2 sm:mx-8 fill-almostWhite shrink-0"
           width="16"
           height="16"
           xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ export default function AccordionElement(props) {
           />
         </svg>
         <button
-          className={`w-full text-left text-white transition duration-300 text-xl sm:text-2xl sm:p-6 font-Alegreya tracking-widest`}
+          className={`w-full text-left text-almostWhite transition duration-300 text-sm sm:p-3 p-2 font-Alegreya tracking-widest`}
           onClick={props.toggleAccordion}
         >
           {props.title}
@@ -49,7 +49,7 @@ export default function AccordionElement(props) {
           {text.map((paragraph, i) => (
             <p
               key={i}
-              className="pb-4 pl-10 pr-10 sm:pl-[120px] leading-loose sm:text-base text-left break-words font-Montserrat text-neutral-100 tracking-wide"
+              className="pb-4 pl-10 pr-10 sm:pl-[93px] leading-loose text-sm text-left break-words font-Montserrat text-neutral-100 tracking-wide"
               onClick={props.toggleAccordion}
             >
               {paragraph}

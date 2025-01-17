@@ -52,7 +52,7 @@ const ProfileCard = ({
           </div>
           <div className="items-end text-white sm:space-x-4 sm:py-4 ">
             {website.length > 0 && (
-              <Link to={website}>
+              <Link to={website} target="_blank">
                 <span className="sm:inline-block">
                   <BsBrowserChrome
                     size={20}
@@ -62,7 +62,7 @@ const ProfileCard = ({
               </Link>
             )}
             {twitter.length > 0 && (
-              <Link to={twitter}>
+              <Link to={twitter} target="_blank">
                 <span className="sm:inline-block ">
                   <FaTwitter
                     size={20}
@@ -72,7 +72,7 @@ const ProfileCard = ({
               </Link>
             )}
             {insta.length > 0 && (
-              <Link to={insta}>
+              <Link to={insta} target="_blank">
                 <span className="sm:inline-block ">
                   <FaInstagram
                     size={20}
@@ -82,7 +82,7 @@ const ProfileCard = ({
               </Link>
             )}
             {facebook.length > 0 && (
-              <Link to={facebook}>
+              <Link to={facebook} target="_blank">
                 <span className="sm:inline-block ">
                   <FaFacebook
                     size={20}
@@ -92,7 +92,7 @@ const ProfileCard = ({
               </Link>
             )}
             {linkedin.length > 0 && (
-              <Link to={linkedin}>
+              <Link to={linkedin} target="_blank">
                 <span className="sm:inline-block ">
                   <FaLinkedin
                     size={20}
@@ -102,7 +102,7 @@ const ProfileCard = ({
               </Link>
             )}
             {linkedin.length > 0 && (
-              <Link to={linkedin}>
+              <Link to={linkedin} target="_blank">
                 <span className="sm:inline-block ">
                   <FaYoutube
                     size={20}

@@ -14,8 +14,8 @@ const Accordion = () => {
       if (accord.key === accordionkey) {
         return { ...accord, isOpen: !accord.isOpen };
       } else {
-        // return { ...accord , isOpen: false }; // use this to have only one open at a time
-        return { ...accord };
+        return { ...accord, isOpen: false }; // use this to have only one open at a time
+        // return { ...accord };
       }
     });
     setAccordion(updatedAccordions);
@@ -28,15 +28,12 @@ const Accordion = () => {
 
   return (
     <>
-      <section className="py-20 bg-primaryGold">
-        <div className="mx-auto max-w-7xl ">
-          <h2 className="p-4 mx-auto mb-10 text-2xl font-bold sm:text-5xl text-neutral-200 font-English">
-            {text.title}
-          </h2>
-          <div className="flex flex-wrap border-b border-neutral-300">
-            {accordions.map((accordion) => (
+      <section className=" bg-primaryGreen">
+        <div className="max-w-5xl mx-auto ">
+          <div className="flex flex-wrap border-b border-almostWhite">
+            {accordions.map((accordion, index) => (
               <AccordionElement
-                key={accordion.key}
+                key={index}
                 title={accordion.title}
                 text={accordion.text}
                 isOpen={accordion.isOpen}

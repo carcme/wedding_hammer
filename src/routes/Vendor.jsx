@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import HeroImgArch from "../components/Hero/HeroImgArch";
 import Vendors from "../components/Vendors";
-import Accordion from "../components/Accordion";
 import vendorsData from "../data/vendorsData";
+import Faq from "../components/Faq";
 import { getLanguage } from "../LanguageContext";
 
 const Temp = () => {
@@ -15,7 +15,7 @@ const Temp = () => {
     <>
       <HeroImgArch headline={data.title} subheading={data.subTitle} />
       <Vendors sections={data.sections} />
-      <Accordion />
+      <Faq />
     </>
   );
 };
