@@ -12,7 +12,7 @@ const vendorsList = {
 
         items: [
           {
-            img: "../assets/image/cake.webp",
+            img: "cake.webp",
             imgAlt: "Cake",
             name: "Jules Cake Shop",
             service: "Specialty Cakes",

@@ -8,8 +8,8 @@ const whyUs = {
         text: [
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
         ],
-        img: "../assets/image/garden_night.webp",
-        imgAlt: "?",
+        img: "garden_night.webp",
+        imgAlt: "garden at night",
       },
       {
         title: "Weddings",
@@ -21,8 +21,8 @@ const whyUs = {
           "The Hammer Barn blends rustic charm and German elegance so seamlessly your guests will ask, “How did you ever find this place?",
         ],
 
-        img: "../assets/image/hands_crop.webp",
-        imgAlt: "?",
+        img: "hands_crop.webp",
+        imgAlt: "Wedding band hands",
       },
       {
         title: "Eat in The Kitchen",
@@ -34,8 +34,8 @@ const whyUs = {
           "The Hammer Barn blends rustic charm and German elegance so seamlessly your guests will ask, “How did you ever find this place?",
         ],
 
-        img: "../assets/image/cake_crop.webp",
-        imgAlt: "?",
+        img: "cake_crop.webp",
+        imgAlt: "Cake made by Jules",
       },
     ],
   },

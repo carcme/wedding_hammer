@@ -1,4 +1,5 @@
 import React from "react";
+import { getAssetImageURL } from "@/lib/image-util";
 
 const HeroImgArch = ({ headline, subheading }) => {
   return (
@@ -15,8 +16,8 @@ const HeroImgArch = ({ headline, subheading }) => {
         <div className="h-[45rem] mt-12 lg:mt-0 w-full mx-auto max-w-lg overflow-hidden rounded-t-full outline outline-4 outline-offset-4 outline-primaryGreenLight/60">
           <img
             className="object-cover w-full h-full rounded-t-full "
-            src="../assets/image/forest_wedding.webp"
-            alt="main page"
+            src={getAssetImageURL("forest_wedding.webp")}
+            alt="couple married in forest"
           />
         </div>
       </section>

@@ -35,13 +35,6 @@ const HeroSplit = () => {
               >
                 {data.btn2}
               </Link>
-
-              {/* <Link
-                href="#"
-                class="border-2 text-sm duration-300 transition-colors hover:bg-[#475F45] hover:text-white font-bold leading-4 mt-4 sm:mt-0 tracking-widest text-[#475F45] sm:mx-4 border-[#475F45] px-6 block text-center py-3 uppercase"
-              >
-                Learn More
-              </Link> */}
             </div>
           </div>
           {/* <!-- content - end --> */}

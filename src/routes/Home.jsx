@@ -6,10 +6,11 @@ import Hero from "../components/Hero";
 import HeroSection from "../components/HeroSection";
 import WhyUs from "../components/WhyUs";
 import HeroSplit from "../components/HeroSplit";
+import { getAssetImageURL } from "@/lib/image-util";
 
 const Home = () => {
   const blendMode = true;
-
+  const image = getAssetImageURL("forest_wedding.webp");
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,10 +18,7 @@ const Home = () => {
     <>
       <HeroSplit />
 
-      <ImageCard
-        image="/assets/image/forest_wedding.webp"
-        blendMode={blendMode}
-      />
+      <ImageCard image={image} blendMode={blendMode} />
       <WhyUs />
     </>
   );

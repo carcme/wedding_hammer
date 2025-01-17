@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { BsBrowserChrome } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { getAssetImageURL } from "@/lib/image-util";
 
 const ProfileCard = ({
   image,
@@ -22,6 +23,10 @@ const ProfileCard = ({
   linkedin,
 }) => {
   console.log("name", name, name.length);
+
+  if (!image.startsWith("https")) {
+    image = getAssetImageURL(image);
+  }
 
   return (
     <>

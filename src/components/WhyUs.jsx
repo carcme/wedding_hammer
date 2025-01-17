@@ -1,5 +1,6 @@
 import React from "react";
 import whyUsData from "../data/whyUs";
+import { getAssetImageURL } from "@/lib/image-util";
 
 const WhyUs = () => {
   const text = whyUsData.en;
@@ -22,8 +23,8 @@ const WhyUs = () => {
           <div className="flex flex-wrap items-center m-10 mx-auto text-left max-w-7xl">
             <div className="w-full px-4 md:w-3/5 lg:w-1/2">
               <img
-                src={item.img}
-                alt="gem"
+                src={getAssetImageURL(item.img)}
+                alt={item.imgAlt}
                 className={`inline-block border rounded-lg shadow-2xl border-primaryGreen  ${
                   index % 2 === 0 ? "" : ""
                 }`}

@@ -13,10 +13,8 @@ const Booking = ({}) => {
   const location = useLocation();
 
   const data = getLanguage(BookingData);
-  console.log("data === ", data);
   const bookingText = getLanguage(bookingPageText);
 
-  console.log("data.mysteries[0] === ", data.mysteries[0]);
   // if (location === null || location.state === null) {
   //   console.log("Error - No mystery data, redirect to select page ");
   //   return <Navigate to={"/mystery"} />;
