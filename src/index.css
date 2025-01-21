@@ -21,6 +21,13 @@
   transition: background-color 1000s ease-in-out 0s !important;
   -webkit-text-fill-color: #f6f6f5;
 }
+.webkitAutoFillOverrideLight:-webkit-autofill,
+.webkitAutoFillOverrideLight:-webkit-autofill:hover,
+.webkitAutoFillOverrideLight:-webkit-autofill:focus,
+.webkitAutoFillOverrideLight:-webkit-autofill:active {
+  transition: background-color 1000s ease-in-out 0s !important;
+  -webkit-text-fill-color: #333;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -46,17 +53,17 @@
 
 input:focus-within ~ label,
 input:not(:placeholder-shown) ~ label {
-  @apply transform scale-90 -translate-y-8 text-neutral-400;
+  @apply -translate-y-8 scale-90 transform text-neutral-400;
 }
 
 select:focus-within ~ label,
 select:has(option[value=""]:not(:checked)) ~ label {
-  @apply transform scale-90 -translate-y-8 text-neutral-400;
+  @apply -translate-y-8 scale-90 transform text-neutral-400;
 }
 
 textarea:focus-within ~ label,
 textarea:not(:placeholder-shown) ~ label {
-  @apply transform scale-90 -translate-y-8 text-neutral-400;
+  @apply -translate-y-8 scale-90 transform text-neutral-400;
 }
 
 input:focus-within ~ label,
@@ -68,16 +75,16 @@ textarea:focus-within ~ label {
   @apply relative float-left mr-4;
 }
 .social li a {
-  @apply bg-[#333] text-white h-10 relative w-10 hover:text-white hover:bg-white rounded-full transition-colors duration-300 items-center justify-center flex;
+  @apply relative flex h-10 w-10 items-center justify-center rounded-full bg-[#333] text-white transition-colors duration-300 hover:bg-white hover:text-white;
 }
 .social li a i {
   @apply relative z-20;
 }
 .social li a .inner {
-  @apply absolute block w-0 h-0 m-0 transition-all duration-300 rounded-full bg-primaryGreenDark left-2/4 top-2/4;
+  @apply absolute left-2/4 top-2/4 m-0 block h-0 w-0 rounded-full bg-primaryGreenDark transition-all duration-300;
 }
 .social li a:hover .inner {
-  @apply h-[40px] w-[40px] ml-[-20px] mt-[-20px];
+  @apply ml-[-20px] mt-[-20px] h-[40px] w-[40px];
 }
 
 .active-diagonal-line > a,
@@ -89,7 +96,7 @@ textarea:focus-within ~ label {
 /* Add decoration for Hover state */
 .hover-diagonal-line > li > a::before,
 .hover-diagonal-line > ul > li > a::before {
-  @apply content-[""] absolute h-0.5 w-[50px] bg-[#c62828]  z-[-1] left-2/4 top-2/4;
+  @apply absolute left-2/4 top-2/4 z-[-1] h-0.5 w-[50px] bg-[#c62828] content-[""];
 
   transform: translateX(-50%) rotate3d(0, 0, 1, -45deg) scale3d(0, 1, 1);
   transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);

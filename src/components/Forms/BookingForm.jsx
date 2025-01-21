@@ -6,7 +6,7 @@ import { splitStrtoInt } from "@/lib/utils";
 import BookingDetails from "./BookingDetails";
 import { useLanguage } from "@/LanguageContext";
 
-const BookingForm = ({ title, players, cost, bookingText }) => {
+const BookingForm = ({ title, players, bookingText }) => {
   const currentDate = dayjs(new Date());
   const [events, setEvents] = useState([]);
   const [selectDate, setSelectDate] = useState(currentDate);
@@ -32,7 +32,6 @@ const BookingForm = ({ title, players, cost, bookingText }) => {
         <BookingDetails
           numPlayers={playersOptions}
           gameTitle={title}
-          cost={cost}
           date={selectDate.toDate().toDateString()}
           bookingText={bookingText}
         />

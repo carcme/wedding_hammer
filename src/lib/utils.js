@@ -20,3 +20,13 @@ export function splitStrtoInt(rangeString, splitChar) {
   }
   return resultArray;
 }
+
+export function calcVenueCost(capacity, venueCost, extraPersonCost, nGuests) {
+  console.log("capacity", capacity);
+  console.log("venueCost", venueCost);
+  console.log("extraPersoncost", extraPersonCost);
+  console.log("nGuests - capacity", nGuests - capacity);
+  if (nGuests > capacity) {
+    return venueCost + (nGuests - capacity) * extraPersonCost;
+  } else return venueCost;
+}

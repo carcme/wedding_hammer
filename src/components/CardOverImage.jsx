@@ -1,6 +1,7 @@
 import React from "react";
 import whyUsData from "../data/whyUs";
 import { getLanguage } from "../LanguageContext";
+import { getAssetImageURL } from "@/lib/image-util";
 
 const CardOverImage = () => {
   const text = getLanguage(whyUsData);
@@ -57,7 +58,7 @@ const CardOverImage = () => {
               <div className="scale-105 lg:shadow-2xl lg:col-span-7 -z-10 ">
                 <img
                   className="object-cover w-full h-full bg-cover lg:row-span-8 xl:max-w-6xl "
-                  src={item.img}
+                  src={getAssetImageURL(item.img)}
                   alt={item.imgAlt}
                 />
               </div>

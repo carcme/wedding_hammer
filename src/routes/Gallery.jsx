@@ -9,11 +9,11 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-import photos from "../components/photos/photos";
-
 // Dynamically import all images in the _fairImages folder
 const images = import.meta.glob("/assets/image/*.{webp,png,jpg,jpeg,svg}", {
-  as: "url",
+  // as: "url",
+  query: "?url",
+  import: "default",
   eager: true,
 });
 
@@ -38,10 +38,6 @@ const Gallery = () => {
       image.title = image.src.replace("_port", "");
     }
   });
-
-  // const handleLayout = () => {
-  //   layout === "rows" ? setLayout("columns") : setLayout("rows");
-  // };
 
   useEffect(() => {
     window.scrollTo(0, 0);

@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 export default function AccordionElement(props) {
-  const { text } = props;
+  const { title, text, link, linkTxt, isOpen, toggleAccordion } = props;
 
   return (
-    <div className="min-w-full ">
-      <div className="relative flex items-center border-t border-almostWhite ">
-        <div className="absolute w-8 h-8 bg-transparent rounded-full sm:size-16 sm:left-5" />
+    <div className="min-w-full">
+      <div className="relative flex items-center border-t border-almostWhite">
+        <div className="absolute h-8 w-8 rounded-full bg-transparent sm:left-5 sm:size-16" />
         <svg
-          className="z-10 mx-2 sm:mx-8 fill-almostWhite shrink-0"
+          className="z-10 mx-2 shrink-0 fill-almostWhite sm:mx-8"
           width="16"
           height="16"
           xmlns="http://www.w3.org/2000/svg"
@@ -16,8 +18,8 @@ export default function AccordionElement(props) {
             width="16"
             height="2"
             rx="1"
-            className={`transition duration-300 ease-out origin-center transform ${
-              props.isOpen ? "rotate-180" : "rotate-0"
+            className={`origin-center transform transition duration-300 ease-out ${
+              isOpen ? "rotate-180" : "rotate-0"
             }`}
           />
           <rect
@@ -25,36 +27,48 @@ export default function AccordionElement(props) {
             width="16"
             height="2"
             rx="1"
-            className={`transition duration-300 ease-out origin-center transform ${
-              props.isOpen ? "rotate-180" : "rotate-90"
+            className={`origin-center transform transition duration-300 ease-out ${
+              isOpen ? "rotate-180" : "rotate-90"
             }`}
           />
         </svg>
         <button
-          className={`w-full text-left text-almostWhite transition duration-300 text-sm sm:p-3 p-2 font-Alegreya tracking-widest`}
-          onClick={props.toggleAccordion}
+          className={`w-full p-2 text-left font-Alegreya text-sm tracking-widest text-almostWhite transition duration-300 sm:p-3`}
+          onClick={toggleAccordion}
         >
-          {props.title}
+          {title}
         </button>
       </div>
       <div
-        aria-labelledby={props.title}
-        className={`grid text-sm overflow-hidden transition-all duration-300 ease-in-out ${
-          props.isOpen
-            ? "grid-rows-[1fr] opacity-100"
-            : "grid-rows-[0fr] opacity-0"
+        aria-labelledby={title}
+        className={`grid overflow-hidden text-sm transition-all duration-300 ease-in-out ${
+          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         }`}
       >
         <div className="overflow-hidden">
-          {text.map((paragraph, i) => (
-            <p
-              key={i}
-              className="pb-4 pl-10 pr-10 sm:pl-[93px] leading-loose text-sm text-left break-words font-Montserrat text-neutral-100 tracking-wide"
-              onClick={props.toggleAccordion}
-            >
-              {paragraph}
-            </p>
-          ))}
+          <div className="flex flex-row">
+            <div className="flex flex-col">
+              {text.map((paragraph, i) => (
+                <div key={i} className="">
+                  <p
+                    className="break-words pb-4 pl-10 pr-10 text-left font-Montserrat text-sm leading-loose tracking-wide text-neutral-100 sm:pl-[93px]"
+                    onClick={props.toggleAccordion}
+                  >
+                    {paragraph}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-end">
+              {link?.length > 0 && (
+                <Link to={link} onClick={toggleAccordion}>
+                  <button className="rounded bg-primaryGreenDark px-4 py-2 text-center font-bold text-white transition duration-200 hover:bg-almostWhite hover:text-primaryGreen">
+                    {linkTxt}
+                  </button>
+                </Link>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

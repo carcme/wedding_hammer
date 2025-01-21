@@ -4,10 +4,11 @@ import { getAssetImageURL } from "@/lib/image-util";
 
 const WhyUs = () => {
   const text = whyUsData.en;
+  const blendMode = true;
   return (
     <>
       <div className="container pt-20 mx-auto text-center ">
-        <h1 className="text-4xl font-normal tracking-widest lg:text-6xl font-Alegreya">
+        <h1 className="pb-10 text-4xl font-normal tracking-widest lg:text-6xl font-Alegreya">
           {text.title}
         </h1>
 
@@ -20,13 +21,17 @@ const WhyUs = () => {
               index % 2 === 0 ? "bg-white" : "bg-primaryHoneyDew"
             }`}
           />
-          <div className="flex flex-wrap items-center m-10 mx-auto text-left max-w-7xl">
-            <div className="w-full px-4 md:w-3/5 lg:w-1/2">
+          {/* <div
+            className={`absolute w-full h-screen color-white bg-gradient-to-t from-transparent to-almostWhite from-60%`}
+          /> */}
+
+          <div className="flex flex-wrap items-center m-10 text-left md:px-10 max-w-7xl">
+            <div className="w-3/4 m-auto md:w-3/5 lg:w-1/2">
               <img
                 src={getAssetImageURL(item.img)}
                 alt={item.imgAlt}
                 className={`inline-block border rounded-lg shadow-2xl border-primaryGreen  ${
-                  index % 2 === 0 ? "" : ""
+                  index % 2 === 0 ? "" : "mt-10"
                 }`}
               />
             </div>
@@ -41,6 +46,10 @@ const WhyUs = () => {
               {item.text.map((para, i) => (
                 <p key={i} className="mt-6 sm:text-lg font-Montserrat">
                   {para}
+                  {/* add padding to last paragraph when bg is primaryHoneyDew*/}
+                  {item.text.length - 1 === i && index % 2 !== 0 && (
+                    <div className="pb-10"></div>
+                  )}
                 </p>
               ))}
             </div>

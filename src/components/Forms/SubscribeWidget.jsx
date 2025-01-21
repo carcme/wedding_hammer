@@ -40,11 +40,11 @@ const ProcessForm = ({ status, message, onValidated, source, text }) => {
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
       {status == null && (
-        <div className="items-center max-w-screen-sm mx-0 mb-3 space-y-4 sm:flex sm:space-y-0">
+        <div className="mx-0 mb-3 max-w-screen-sm items-center space-y-4 sm:flex sm:space-y-0">
           <div className="relative w-full">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
               <svg
-                className="w-5 h-5 text-[#717171]"
+                className="h-5 w-5 text-[#717171]"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ const ProcessForm = ({ status, message, onValidated, source, text }) => {
               </svg>
             </div>
             <input
-              className="block w-full p-3 pl-10 text-sm text-black placeholder-[#717171] bg-transparent border border-gray-600 rounded-lg shadow-none sm:rounded-none sm:rounded-l-lg focus:ring-0 focus:border-gray-400 focus:outline-none webkitAutoFillOverride focus:text-white active:text-white"
+              className="webkitAutoFillOverrideLight block w-full rounded-lg border border-gray-600 bg-transparent p-3 pl-10 text-sm text-black placeholder-[#717171] shadow-none focus:border-gray-400 focus:text-primaryGreen focus:outline-none focus:ring-0 active:text-primaryGreen sm:rounded-none sm:rounded-l-lg"
               onChange={(e) => setEmail(e.target.value)}
               placeholder={text.emailPlaceholder}
               autoComplete="email"
@@ -66,7 +66,7 @@ const ProcessForm = ({ status, message, onValidated, source, text }) => {
           <div>
             <button
               type="submit"
-              className="relative w-full px-5 py-3 overflow-hidden text-sm font-medium text-center text-white transition-all border border-gray-500 rounded-lg shadow-2xl cursor-pointer bg-accentDecoration sm:rounded-none sm:rounded-r-xl hover:before:bg-white before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-white before:transition-all before:duration-300 hover:text-accentDecoration hover:before:left-0 hover:before:w-full"
+              className="relative w-full cursor-pointer overflow-hidden rounded-lg border border-gray-500 bg-primaryGreen px-5 py-3 text-center text-sm font-medium text-white shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-white before:transition-all before:duration-300 hover:text-primaryGreen hover:before:left-0 hover:before:w-full hover:before:bg-white sm:rounded-none sm:rounded-r-xl"
             >
               <span className="relative z-10">{text.subscribeBtnTxt}</span>
             </button>
@@ -75,10 +75,10 @@ const ProcessForm = ({ status, message, onValidated, source, text }) => {
       )}
       {status == "success" && (
         <div
-          className={`items-center py-3 mx-0 mb-3 space-y-4 sm:flex sm:space-y-0 animate-txtBlur ${
+          className={`animate-txtBlur mx-0 mb-3 items-center space-y-4 py-3 sm:flex sm:space-y-0 ${
             source === "component"
-              ? "justify-center max-w-full"
-              : "max-w-screen-sm "
+              ? "max-w-full justify-center"
+              : "max-w-screen-sm"
           }}`}
         >
           <TiTick size={24} className="text-accentDecoration" />
@@ -86,16 +86,16 @@ const ProcessForm = ({ status, message, onValidated, source, text }) => {
         </div>
       )}
       {state == "error" && (
-        <div className="items-center max-w-screen-sm py-3 mx-0 mb-3 space-y-4 sm:flex sm:space-y-0 ">
+        <div className="mx-0 mb-3 max-w-screen-sm items-center space-y-4 py-3 sm:flex sm:space-y-0">
           <MdErrorOutline
             size={24}
-            className="mr-2 text-red-700 animate-shuffle"
+            className="animate-shuffle mr-2 text-red-700"
           />
 
           <p className="italic text-neutral-200"></p>
           <button
             onClick={reset}
-            className="h-6 ml-4 bg-transparent border-2 hover:bg-neutral-700 border-neutral-700 hover:italic"
+            className="ml-4 h-6 border-2 border-neutral-700 bg-transparent hover:bg-neutral-700 hover:italic"
           >
             Reset
           </button>
@@ -106,13 +106,13 @@ const ProcessForm = ({ status, message, onValidated, source, text }) => {
         </div>
       )}
       {status == "sending" && (
-        <div className="items-center max-w-screen-sm py-3 mx-0 mb-3 space-y-4 sm:flex sm:space-y-0 animate-txtBlur">
+        <div className="animate-txtBlur mx-0 mb-3 max-w-screen-sm items-center space-y-4 py-3 sm:flex sm:space-y-0">
           <BiMailSend
             size={24}
-            className="mr-2 text-accentDecoration animate-pulse"
+            className="mr-2 animate-pulse text-accentDecoration"
           />
 
-          <p className=" text-neutral-200 animate-pulse">{text.sending}</p>
+          <p className="animate-pulse text-neutral-200">{text.sending}</p>
         </div>
       )}
     </form>
@@ -143,7 +143,7 @@ const SubscribeWidget = ({ source }) => {
         )}
       />
 
-      <div className="mx-0 max-w-screen-sm text-[12px] text-left newsletter-form-footer text-[#717171]">
+      <div className="newsletter-form-footer mx-0 max-w-screen-sm text-left text-[12px] text-[#717171]">
         <p>{text.weCare}</p>
         <p className="group">
           <Link
@@ -154,8 +154,9 @@ const SubscribeWidget = ({ source }) => {
             rel="noopener noreferrer"
             className="font-medium hover:underline"
           >
-            {text.readOur}{" "}
-            <span className="group-hover:text-primaryGreen hover:font-bold">
+            {text.readOur}
+            <span className="hover:font-bold group-hover:text-primaryGreen">
+              {" "}
               {text.privacyPolicy}
             </span>
           </Link>

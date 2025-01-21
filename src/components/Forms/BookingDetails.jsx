@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import dayjs from "dayjs";
+import { calcVenueCost } from "../../lib/utils";
 
-const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
+const BookingDetails = ({ numPlayers, gameTitle, date, bookingText }) => {
   const confirmRef = useRef(null);
 
   const {
@@ -17,6 +18,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
 
   const [isSuccess, setIsSuccess] = useState(false);
   const [Message, setMessage] = useState("");
+  const [cost, setCost] = useState(0);
 
   const today = dayjs(new Date()).toDate().toDateString();
   const dateIsSet = date !== today;
@@ -58,12 +60,26 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
     if (dateIsSet) {
       setValue("date", date, { shouldValidate: true, shouldDirty: true });
     }
-  }, [isValid, dateIsSet]);
+
+    if (watchPlayers) {
+      setCost(
+        calcVenueCost(
+          bookingText.capacity,
+          bookingText.venueCost,
+          bookingText.extraPersonCost,
+          watchPlayers,
+        ),
+      );
+    }
+  }, [isValid, dateIsSet, watchPlayers]);
+
+  console.log("cost", cost);
+  console.log("watchPlayers", watchPlayers);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="relative">
-        <div className="items-center gap-6 my-6 sm:grid sm:grid-cols-5">
+        <div className="my-6 items-center gap-6 sm:grid sm:grid-cols-5">
           {/* web3Forms data */}
           <input
             type="hidden"
@@ -98,9 +114,9 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
             style={{ display: "none" }}
             {...register("botcheck")}
           ></input>
-          <div className="relative col-span-3 mb-10 border-b-2 border-transparent sm:mb-6 focus-within:border-primaryGreenDark">
+          <div className="relative col-span-3 mb-10 border-b-2 border-transparent focus-within:border-primaryGreenDark sm:mb-6">
             <input
-              className="webkitAutoFillOverride block w-full p-2 px-3 border-0 rounded-0 bg-primaryGreen leading-[1.6] shadow-none focus:outline-none text-almostWhite focus:text-white "
+              className="webkitAutoFillOverride rounded-0 block w-full border-0 bg-primaryGreen p-2 px-3 leading-[1.6] text-almostWhite shadow-none focus:text-white focus:outline-none"
               type="name"
               name="name"
               placeholder=""
@@ -109,7 +125,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
               {...register("name", { required: true, maxLength: 100 })}
             />
             <label
-              className="absolute top-0 z-[1] p-2 text-almostWhite transition-all duration-200 ease-linear origin-left"
+              className="absolute top-0 z-[1] origin-left p-2 text-almostWhite transition-all duration-200 ease-linear"
               htmlFor="name"
             >
               {bookingText.fullName}
@@ -117,7 +133,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
           </div>
           <div className="relative mb-10 border-b-2 border-transparent sm:mb-6">
             <select
-              className="webkitAutoFillOverride block w-full p-2 px-3 border-0 rounded-0 bg-primaryGreen leading-[1.6] shadow-none focus:outline-none text-almostWhite focus:text-white "
+              className="webkitAutoFillOverride rounded-0 block w-full border-0 bg-primaryGreen p-2 px-3 leading-[1.6] text-almostWhite shadow-none focus:text-white focus:outline-none"
               placeholder=""
               id="players"
               name="players"
@@ -131,15 +147,15 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
               ))}
             </select>
             <label
-              className="absolute top-0 z-[1] p-2 text-almostWhite transition-all duration-200 ease-linear origin-left"
+              className="absolute top-0 z-[1] origin-left p-2 text-almostWhite transition-all duration-200 ease-linear"
               htmlFor="players"
             >
               {bookingText.numPlayers}
             </label>
           </div>
-          <div className="relative mb-10 border-b-2 border-transparent sm:mb-6 focus-within:border-primaryGreenDark">
+          <div className="relative mb-10 border-b-2 border-transparent focus-within:border-primaryGreenDark sm:mb-6">
             <input
-              className="webkitAutoFillOverride block w-full p-2 px-3 border-0 rounded-0 bg-primaryGreen leading-[1.6] shadow-none focus:outline-none text-almostWhite focus:text-white "
+              className="webkitAutoFillOverride rounded-0 block w-full border-0 bg-primaryGreen p-2 px-3 leading-[1.6] text-almostWhite shadow-none focus:text-white focus:outline-none"
               type="text"
               name="date"
               placeholder=""
@@ -149,17 +165,17 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
               {...register("date", { required: true, dateIsSet: true })}
             />
             <label
-              className="absolute top-0 z-[1] p-2 text-almostWhite transition-all duration-200 ease-linear origin-left"
+              className="absolute top-0 z-[1] origin-left p-2 text-almostWhite transition-all duration-200 ease-linear"
               htmlFor="date"
             >
               {bookingText.selDate}
             </label>
           </div>
         </div>
-        <div className="gap-6 my-6 sm:grid sm:grid-cols-2 ">
-          <div className="relative mb-10 border-b-2 border-transparent sm:mb-6 focus-within:border-primaryGreenDark">
+        <div className="my-6 gap-6 sm:grid sm:grid-cols-2">
+          <div className="relative mb-10 border-b-2 border-transparent focus-within:border-primaryGreenDark sm:mb-6">
             <input
-              className="webkitAutoFillOverride block w-full p-2 px-3 border-0 rounded-0 bg-primaryGreen leading-[1.6] shadow-none focus:outline-none text-almostWhite focus:text-white "
+              className="webkitAutoFillOverride rounded-0 block w-full border-0 bg-primaryGreen p-2 px-3 leading-[1.6] text-almostWhite shadow-none focus:text-white focus:outline-none"
               type="email"
               name="email"
               placeholder=""
@@ -168,15 +184,15 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
               {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             />
             <label
-              className="absolute top-0 z-[1] p-2 text-almostWhite transition-all duration-200 ease-linear origin-left"
+              className="absolute top-0 z-[1] origin-left p-2 text-almostWhite transition-all duration-200 ease-linear"
               htmlFor="email"
             >
               {bookingText.email}
             </label>
           </div>
-          <div className="relative mb-10 border-b-2 border-transparent sm:mb-6 focus-within:border-primaryGreenDark">
+          <div className="relative mb-10 border-b-2 border-transparent focus-within:border-primaryGreenDark sm:mb-6">
             <input
-              className="webkitAutoFillOverride block w-full p-2 px-3 border-0 rounded-0 bg-primaryGreen leading-[1.6] shadow-none focus:outline-none text-almostWhite focus:text-white "
+              className="webkitAutoFillOverride rounded-0 block w-full border-0 bg-primaryGreen p-2 px-3 leading-[1.6] text-almostWhite shadow-none focus:text-white focus:outline-none"
               type="tel"
               name="tel"
               autoComplete="tel"
@@ -189,7 +205,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
               })}
             />
             <label
-              className="absolute top-0 z-[1] p-2 text-almostWhite transition-all duration-200 ease-linear origin-left"
+              className="absolute top-0 z-[1] origin-left p-2 text-almostWhite transition-all duration-200 ease-linear"
               htmlFor="tel"
             >
               {bookingText.phone}
@@ -198,7 +214,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
         </div>
         <div className="relative my-6 border-b-2 border-transparent focus-within:border-primaryGreenDark">
           <textarea
-            className="webkitAutoFillOverride block w-full p-2 px-3 border-0 rounded-0 bg-primaryGreen leading-[1.6] shadow-none focus:outline-none text-almostWhite focus:text-white "
+            className="webkitAutoFillOverride rounded-0 block w-full border-0 bg-primaryGreen p-2 px-3 leading-[1.6] text-almostWhite shadow-none focus:text-white focus:outline-none"
             id="comments"
             type="text"
             name="comments"
@@ -208,7 +224,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
           />
           <label
             htmlFor="comments"
-            className="absolute top-0 z-[1] p-2 text-almostWhite transition-all duration-200 ease-linear origin-left"
+            className="absolute top-0 z-[1] origin-left p-2 text-almostWhite transition-all duration-200 ease-linear"
           >
             {bookingText.comments}
           </label>
@@ -217,56 +233,67 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
         <div ref={confirmRef} className="flex flex-col justify-center py-6">
           {isValid && (
             <div className="animate-txtBlur">
-              <h1 className="text-5xl font-bold font-Montserrat">
+              <h1 className="font-Montserrat text-5xl font-bold">
                 {bookingText.preivew}
               </h1>
 
-              {/* Selected Game */}
-              <div className="grid grid-cols-3 py-6 gap-y-2 ">
-                <div className="flex items-center p-4 ">
+              <div className="grid grid-cols-3 gap-y-2 py-6">
+                {/* Selected Game */}
+                {/* <div className="flex items-center p-4 ">
                   {bookingText.selGame}
                 </div>
                 <div className="flex flex-col items-center col-span-2 p-4 text-white sm:flex-row">
                   {gameTitle}{" "}
                   <span className="ml-3 text-neutral-600">({date})</span>
-                </div>
-
+                </div> */}
                 {/* Date */}
-                <div className="flex items-center p-4 ">
+                <div className="flex items-center p-4">
                   {bookingText.prefDate}
                 </div>
-                <div className="flex flex-col items-center col-span-2 p-4 sm:flex-row ">
+                <div className="col-span-2 flex flex-col items-center p-4 sm:flex-row">
                   {date}
                 </div>
-
-                {/* Players*/}
-                <div className="flex items-center p-4 ">
-                  {bookingText.numPlayers}
+                {/* Capcity */}
+                <div className="flex items-center p-4">
+                  {bookingText.capacityTxt}
                 </div>
-                <div className="flex flex-col items-center col-span-2 p-4 sm:flex-row ">
-                  {watchPlayers} {bookingText.players}
-                  <span className="ml-3 text-neutral-600">
-                    ({cost} € {bookingText.perPlayer})
-                  </span>
+                <div className="col-span-2 flex flex-col items-center p-4 sm:flex-row">
+                  {bookingText.capacity}
                 </div>
-
+                {/* Guest*/}
+                {watchPlayers > bookingText.capacity && (
+                  <div className="flex items-center p-4">
+                    {bookingText.extraGuests}
+                  </div>
+                )}
+                {watchPlayers > bookingText.capacity && (
+                  <div className="col-span-2 flex flex-col items-center p-4 sm:flex-row">
+                    {watchPlayers - bookingText.capacity} {bookingText.players}
+                    <span className="ml-3 text-neutral-600">
+                      ({bookingText.extraPersonCost} € {bookingText.perPlayer})
+                    </span>
+                  </div>
+                )}
                 {/* Deposit */}
-                <div className="flex items-center p-4 ">
-                  {bookingText.minDeposit}
+                <div className="flex items-center p-4">
+                  {bookingText.reservationTxt}
                 </div>
-                <div className="flex flex-col items-center col-span-2 p-4 sm:flex-row ">
-                  {cost * watchPlayers * 0.2} €
-                  <span className="ml-3 text-neutral-600">
-                    (20% {bookingText.deposit})
-                  </span>
+                <div className="col-span-2 flex flex-col items-center p-4 sm:flex-row">
+                  {bookingText.reservationFee} €
+                </div>
+                {/* Balance */}
+                <div className="flex items-center p-4">
+                  {bookingText.totalTxt}
+                </div>
+                <div className="col-span-2 flex flex-col items-center p-4 sm:flex-row">
+                  {cost + bookingText.reservationFee} €
                 </div>
 
-                {/* Balance */}
-                <div className="flex items-center p-4 ">
-                  {bookingText.balance}
+                <div className="flex items-center p-4">
+                  {bookingText.totalToReserveTxt}
                 </div>
-                <div className="flex flex-col items-center col-span-2 p-4 sm:flex-row ">
-                  {cost * watchPlayers - cost * watchPlayers * 0.2} €
+                <div className="col-span-2 flex flex-col items-center p-4 sm:flex-row">
+                  {(cost + bookingText.reservationFee) * 0.5} €
                   <span className="ml-3 text-neutral-600">
                     ({bookingText.incTaxes})
                   </span>
@@ -276,16 +303,16 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
           )}
 
           {isValid && (
-            <div className="flex flex-col items-center py-6 animate-txtBlur">
+            <div className="animate-txtBlur flex flex-col items-center py-6">
               <button
                 type="submit"
-                className="relative w-full py-3 overflow-hidden text-sm font-medium text-center transition-all border rounded-lg shadow-2xl cursor-pointer text-almostWhite border-primaryGreenDark bg-primaryGreen max-w-96 sm:rounded-xl hover:before:bg-almostWhite before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-almostWhite before:transition-all before:duration-200 hover:text-primaryGreen hover:border-primaryGreenLight hover:before:left-0 hover:before:w-full animate-txtBlur"
+                className="animate-txtBlur relative w-full max-w-96 cursor-pointer overflow-hidden rounded-lg border border-primaryGreenDark bg-primaryGreen py-3 text-center text-sm font-medium text-almostWhite shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-almostWhite before:transition-all before:duration-200 hover:border-primaryGreenLight hover:text-primaryGreen hover:before:left-0 hover:before:w-full hover:before:bg-almostWhite sm:rounded-xl"
                 disabled={isSubmitting}
               >
                 <span className="relative z-10">
                   {isSubmitting ? (
                     <svg
-                      className="w-6 h-5 mx-auto animate-spin "
+                      className="mx-auto h-5 w-6 animate-spin"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -313,7 +340,7 @@ const BookingDetails = ({ numPlayers, gameTitle, cost, date, bookingText }) => {
           )}
           {isSubmitSuccessful && isSuccess && (
             <>
-              <div className="flex flex-col items-center justify-center text-center text-white rounded-md">
+              <div className="flex flex-col items-center justify-center rounded-md text-center text-white">
                 <svg
                   width="100"
                   height="100"

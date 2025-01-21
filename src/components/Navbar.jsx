@@ -36,47 +36,43 @@ const Navbar = () => {
   });
   return (
     <div
-      className={`flex fixed justify-between items-center h-24 xl:px-40 mx-auto px-2 text-white 
-       top-0 z-50 w-full transition-colors ease-in-out duration-700
-      ${
-        scrollPosition < 100 && !isOpen
-          ? "bg-primaryGreen"
-          : "bg-primaryGreen/90"
-      } `}
+      className={`fixed top-0 z-50 mx-auto flex h-24 w-full items-center justify-between px-2 text-white transition-colors duration-700 ease-in-out xl:px-40 ${
+        scrollPosition < 100 ? "bg-primaryGreen" : "bg-primaryGreen/90"
+      } ${isOpen ? "bg-primaryGreenDark" : ""} `}
     >
       {/* Logo */}
       <Link to="/" className="pl-4 sm:pl-12">
         <img
           src={Logo}
           alt="hammer3-logo"
-          className="rounded-full h-14 w-14 hover:scale-110"
+          className="h-14 w-14 rounded-full hover:scale-110"
         />
       </Link>{" "}
       {/* Desktop Navigation */}
       <button
-        className="hidden ml-10 transition duration-300 md:flex hover:cursor-pointer"
+        className="ml-10 hidden transition duration-300 hover:cursor-pointer md:flex"
         aria-label="language"
         onClick={changeLanguage}
       >
         <span
-          className={`py-[14px] fi fib ${
+          className={`fi fib py-[14px] ${
             language === "de" ? "fi-gb" : "fi-de"
           }`}
         ></span>
       </button>
-      <ul className="relative hidden text-almostWhite lg:flex">
+      <ul className="relative hidden text-almostWhite md:flex">
         {/* hover-diagonal-line */}
         {navbarLinks.map((item, index) => (
           <li
             key={index}
-            className="p-4 m-2 capitalize duration-300 cursor-pointer "
+            className="m-2 cursor-pointer p-3 capitalize duration-300"
           >
             <NavLink
               to={item.path}
               className={({ isActive }) =>
                 isActive
-                  ? "relative before:content-[''] before:block before:absolute before:-top-2 before:left-0 before:w-full before:h-0.5 before:rounded-full before:bg-almostWhite"
-                  : "relative "
+                  ? "relative before:absolute before:-top-2 before:left-0 before:block before:h-0.5 before:w-full before:rounded-full before:bg-almostWhite before:content-['']"
+                  : "relative"
               }
             >
               {item.text}
@@ -86,12 +82,12 @@ const Navbar = () => {
       </ul>
       <div
         id="big-nav-buttons"
-        className="flex justify-end flex-grow pr-4 space-x-4 text-white "
+        className="flex flex-grow justify-end space-x-4 pr-4 text-white"
       >
         <div className="items-end space-x-4">
           <Link to="/booking">
             <button
-              className="p-3 transition duration-300 bg-transparent border-2 rounded-full hover:bg-primaryGreenDark border-primaryGreenDark hover:cursor-pointer"
+              className="rounded-full border-2 border-primaryGreenDark bg-transparent p-3 transition duration-300 hover:cursor-pointer hover:bg-primaryGreenDark"
               aria-label="Show mysteries"
             >
               <FaRegCalendarAlt size={16} color="#ddd" />
@@ -99,7 +95,7 @@ const Navbar = () => {
           </Link>
           <Link to="/contact">
             <button
-              className="p-3 transition duration-300 border-2 rounded-full bg-primaryGreenDark hover:bg-transparent/20 border-primaryGreenDark hover:cursor-pointer"
+              className="rounded-full border-2 border-primaryGreenDark bg-primaryGreenDark p-3 transition duration-300 hover:cursor-pointer hover:bg-transparent/20"
               aria-label="Contact"
             >
               <FaEnvelope size={16} color="#ddd" />
@@ -121,9 +117,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Navigation Menu */}
       <ul
-        className={`top-[64px] md:hidden left-0 w-[60%] p-10 bg-primaryGreen text-primaryHoneyDew fixed
-           h-full z-50 ease-in-out duration-700 
-        ${
+        className={`fixed left-0 top-[96px] z-50 h-full w-[60%] bg-primaryGreen p-10 text-primaryHoneyDew duration-700 ease-in-out md:hidden ${
           isOpen
             ? "translate-x-0 bg-primaryGreen"
             : "-translate-x-full bg-transparent"
@@ -134,15 +128,15 @@ const Navbar = () => {
           <NavLink
             to={item.path}
             key={index}
-            className={({ isActive }) => (isActive ? " text-white " : "")}
+            className={({ isActive }) => (isActive ? "text-white" : "")}
           >
-            <li className="z-50 p-4 duration-300 border-b cursor-pointer hover:border-b-primaryGreenDark hover:font-extrabold">
+            <li className="z-50 cursor-pointer border-b p-4 duration-300 hover:border-b-primaryGreenDark hover:font-extrabold">
               {item.text}
             </li>
           </NavLink>
         ))}
         <button
-          className="z-50 p-4 duration-300 cursor-pointer "
+          className="z-50 cursor-pointer p-4 duration-300"
           aria-label="language"
           onClick={changeLanguage}
         >

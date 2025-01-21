@@ -1,4 +1,4 @@
-const vendorsList = {
+const vendorsData = {
   en: {
     title: "Recommended Vendors",
     subTitle:
@@ -37,6 +37,7 @@ const vendorsList = {
             instagram: "",
             facebook: "",
             linkedin: "",
+            youtube: "",
           },
           {
             img: "https://placehold.co/100x100/42554A/42554A",
@@ -321,4 +322,4 @@ const vendorsList = {
     ],
   },
 };
-export default vendorsList;
+export default vendorsData;

@@ -28,14 +28,16 @@ const Accordion = () => {
 
   return (
     <>
-      <section className=" bg-primaryGreen">
-        <div className="max-w-5xl mx-auto ">
+      <section className="bg-primaryGreen">
+        <div className="mx-auto max-w-5xl">
           <div className="flex flex-wrap border-b border-almostWhite">
             {accordions.map((accordion, index) => (
               <AccordionElement
                 key={index}
                 title={accordion.title}
                 text={accordion.text}
+                link={accordion.link}
+                linkTxt={accordion.linkTxt}
                 isOpen={accordion.isOpen}
                 toggleAccordion={() => toggleAccordion(accordion.key)}
               />

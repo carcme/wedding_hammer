@@ -1,6 +1,6 @@
 const whyUs = {
   en: {
-    title: "why us?",
+    title: "Our Event Space",
     subTitle: "Who are we and what do we do",
     items: [
       {
@@ -10,6 +10,30 @@ const whyUs = {
         ],
         img: "garden_night.webp",
         imgAlt: "garden at night",
+      },
+      {
+        title: "Empty Forest",
+        text: [
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+        ],
+        img: "greenCarpet.jpg",
+        imgAlt: "empty forest",
+      },
+      {
+        title: "Empty Forest",
+        text: [
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+        ],
+        img: "greenCarpet.jpg",
+        imgAlt: "empty forest",
+      },
+      {
+        title: "Empty Forest",
+        text: [
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+        ],
+        img: "greenCarpet.jpg",
+        imgAlt: "empty forest",
       },
       {
         title: "Weddings",

@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import ImageCard from "../components/ImageCard";
-
-import Hero from "../components/Hero";
-import HeroSection from "../components/HeroSection";
 import WhyUs from "../components/WhyUs";
 import HeroSplit from "../components/HeroSplit";
+import Faq from "../components/Faq";
+import faqData from "@/data/faqData";
 import { getAssetImageURL } from "@/lib/image-util";
+import { getLanguage } from "@/LanguageContext";
 
 const Home = () => {
   const blendMode = true;
-  const image = getAssetImageURL("forest_wedding.webp");
+  const image = getAssetImageURL("forest_cememony.webp");
+  const faq = getLanguage(faqData);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -20,6 +20,7 @@ const Home = () => {
 
       <ImageCard image={image} blendMode={blendMode} />
       <WhyUs />
+      <Faq headline={faq.title} subheading={faq.subTitle} />
     </>
   );
 };

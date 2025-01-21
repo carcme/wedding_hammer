@@ -1,14 +1,28 @@
 const bookingPageText = {
   en: {
+    capacityTxt: "Capacity",
+    capacity: 50,
+    extraGuests: "Extra Guests",
+    extraPersonCost: 150,
+    venueCost: 2000,
+
+    reservationTxt: "Reservation Fee",
+    reservationFee: 350,
+
+    totalTxt: "Total Cost",
+
+    totalToReserveTxt: "Total to Reserve your Date",
+    totalToReserve: "Total Cost",
+
     difficulty: "Difficulty",
-    players: "Players",
+    players: "Guests",
     costPerson: "Price per Person",
 
     bookNow: "CHECK AVAILABILITY!",
     otherMysteries: "Other Mysteries",
 
     fullName: "Full Name",
-    numPlayers: "Number of Players",
+    numPlayers: "Number of Guests",
     selDate: "Selected Date",
     noSelection: "No Selection",
 
@@ -20,19 +34,28 @@ const bookingPageText = {
 
     selGame: "Selected Game: ",
     prefDate: "Preferred Date: ",
-    perPlayer: " per player",
+    perPlayer: " per guest",
 
-    deposit: "Deposit",
-    minDeposit: "Minimum Deposit",
+    deposit: "Reservation",
+    minDeposit: "Reservation Fee",
     balance: "Balance paid on the day",
     incTaxes: "inc taxes",
 
     sendBtn: "Send Booking",
 
     today: "Today",
-    startTimeNotice: "* this is an evening event and starts at 6pm",
+    startTimeNotice: "* this is the day of the event.",
   },
   de: {
+    capacityTxt: "Capacity",
+    capacity: 50,
+    extraGuests: "Extra Guests",
+    extraPersonCost: 150,
+    venueCost: 2000,
+
+    reservationTxt: "Reservation Fee",
+    reservationFee: 375,
+
     difficulty: "Schwierigkeit",
     players: "Spieler",
     costPerson: "Preis pro Person",
@@ -41,7 +64,7 @@ const bookingPageText = {
     otherMysteries: "Andere Geheimnisse",
 
     fullName: "Vollständiger Name",
-    numPlayers: "Anzahl der Spieler",
+    numPlayers: "Anzahl der Gast",
     selDate: "Ausgewähltes Datum",
     noSelection: "Keine Auswahl",
 
@@ -53,7 +76,7 @@ const bookingPageText = {
 
     selGame: "Ausgewähltes Spiel ",
     prefDate: "Bevorzugtes Datum ",
-    perPlayer: " pro Spieler",
+    perPlayer: " pro Gast",
 
     deposit: "Kaution",
     minDeposit: "Mindesteinzahlung",
@@ -63,7 +86,7 @@ const bookingPageText = {
     sendBtn: "Buchung senden",
 
     today: "Heute",
-    startTimeNotice: "* Dies ist eine Abendveranstaltung und beginnt um 18 Uhr",
+    startTimeNotice: "* Dies ist der Tag der Veranstaltung",
   },
 };
 export default bookingPageText;

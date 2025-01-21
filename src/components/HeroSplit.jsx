@@ -9,29 +9,29 @@ const HeroSplit = () => {
   const data = getLanguage(homeData);
 
   return (
-    <div className="pt-24 pb-6 bg-almostWhite lg:pt-44 sm:pb-8 lg:pb-12">
-      <div className="px-4 mx-auto max-w-screen-2xl md:px-8">
-        <section className="flex flex-col justify-between gap-6 mb-8 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
+    <div className="bg-almostWhite pb-6 pt-24 sm:pb-8 lg:pb-12 lg:pt-44">
+      <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+        <section className="mb-8 flex flex-col justify-between gap-6 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
           <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
             <p className="my-4 font-semibold text-primaryGreen md:mb-6 md:text-lg xl:text-xl">
               {data.teaser}
             </p>
 
-            <h1 className="max-w-xl mb-8 font-serif text-4xl font-medium tracking-wide text-gray-800 capitalize md:text-6xl">
+            <h1 className="mb-8 max-w-xl font-serif text-4xl font-medium capitalize tracking-wide text-gray-800 md:text-6xl">
               {data.title}
             </h1>
 
             <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
               <Link
                 to="/booking"
-                className="inline-block px-8 py-3 text-sm font-semibold text-center transition duration-100 rounded-lg outline-none text-almostWhite bg-primaryGreen ring-primaryGreen ring-2 hover:bg-primaryGreenLight focus-visible:ring active:bg-primaryGreenLight md:text-base"
+                className="inline-block rounded-lg bg-primaryGreen px-8 py-3 text-center text-sm font-semibold text-almostWhite outline-none ring-2 ring-primaryGreen transition duration-100 hover:bg-accentDecoration focus-visible:ring active:bg-accentDecoration md:text-base"
               >
                 {data.btn1}
               </Link>
 
               <Link
                 to={"/contact"}
-                className="inline-block px-8 py-3 text-sm font-semibold text-center transition duration-100 rounded-lg outline-none bg-almostWhite text-primaryGreen ring-2 ring-primaryGreenDark hover:bg-primaryGreen hover:text-white focus-visible:ring active:text-primaryGreen md:text-base"
+                className="inline-block rounded-lg bg-almostWhite px-8 py-3 text-center text-sm font-semibold text-primaryGreen outline-none ring-2 ring-primaryGreenDark transition duration-100 hover:bg-primaryGreen hover:text-white focus-visible:ring active:text-primaryGreen md:text-base"
               >
                 {data.btn2}
               </Link>
@@ -52,41 +52,41 @@ const HeroSplit = () => {
           {/* <!-- image - end --> */}
         </section>
 
-        <section className="flex flex-col items-center justify-between gap-10 pt-8 border-t lg:flex-row lg:gap-8">
+        <section className="flex flex-col items-center justify-between gap-10 border-t pt-8 lg:flex-row lg:gap-8">
           {/* <!-- stats - start --> */}
-          <div className="grid grid-cols-2 gap-4 -mx-6 md:-mx-8 md:flex md:divide-x">
+          <div className="-mx-6 grid grid-cols-2 gap-4 md:-mx-8 md:flex md:divide-x">
             <div className="px-6 md:px-8">
-              <span className="block text-lg font-bold text-center text-primaryGreen md:text-xl">
+              <span className="block text-center text-lg font-bold text-primaryGreen md:text-xl">
                 {data.capacity}
               </span>
-              <span className="block text-sm font-semibold text-center text-gray-800 md:text-base">
+              <span className="block text-center text-sm font-semibold text-gray-800 md:text-base">
                 {data.capacityTitle}
               </span>
             </div>
 
             <div className="px-6 md:px-8">
-              <span className="block text-lg font-bold text-center text-primaryGreen md:text-xl">
+              <span className="block text-center text-lg font-bold text-primaryGreen md:text-xl">
                 {data.pricesTitle}
               </span>
-              <span className="block text-sm font-semibold text-center text-gray-800 md:text-base">
+              <span className="block text-center text-sm font-semibold text-gray-800 md:text-base">
                 {data.prices}
               </span>
             </div>
 
             <div className="px-6 md:px-8">
-              <span className="block text-lg font-bold text-center text-primaryGreen md:text-left md:text-xl">
+              <span className="block text-center text-lg font-bold text-primaryGreen md:text-left md:text-xl">
                 {data.areaTitle}
               </span>
-              <span className="block text-sm font-semibold text-center text-gray-800 md:text-left md:text-base">
+              <span className="block text-center text-sm font-semibold text-gray-800 md:text-left md:text-base">
                 1600 m<sup>2</sup>
               </span>
             </div>
 
             <div className="px-6 md:px-8">
-              <span className="block text-lg font-bold text-center text-primaryGreen md:text-left md:text-xl">
+              <span className="block text-center text-lg font-bold text-primaryGreen md:text-left md:text-xl">
                 {data.somethingTitle}
               </span>
-              <span className="block text-sm font-semibold text-center text-gray-800 md:text-left md:text-base">
+              <span className="block text-center text-sm font-semibold text-gray-800 md:text-left md:text-base">
                 {data.something}
               </span>
             </div>
@@ -95,10 +95,10 @@ const HeroSplit = () => {
 
           {/* <!-- social - start --> */}
           <div className="flex items-center justify-center gap-4 lg:justify-start">
-            <span className="text-sm font-semibold tracking-widest text-gray-400 uppercase sm:text-base">
+            <span className="text-sm font-semibold uppercase tracking-widest text-gray-400 sm:text-base">
               {data.social}
             </span>
-            <span className="w-12 h-px bg-gray-200"></span>
+            <span className="h-px w-12 bg-gray-200"></span>
 
             <div className="flex gap-4">
               {/* instagram */}
@@ -106,7 +106,7 @@ const HeroSplit = () => {
                 <span className="inner"></span>
                 <FaInstagram
                   size={20}
-                  className="relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
+                  className="relative z-[1] cursor-pointer bg-transparent text-gray-400 transition-all hover:scale-110 hover:text-primaryGreen"
                 />
               </a>
               {/* twitter */}
@@ -114,14 +114,14 @@ const HeroSplit = () => {
                 <span className="inner"></span>
                 <FaTwitter
                   size={20}
-                  className="relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
+                  className="relative z-[1] cursor-pointer bg-transparent text-gray-400 transition-all hover:scale-110 hover:text-primaryGreen"
                 />
               </a>
               <a href="#">
                 <span className="inner"></span>
                 <FaYoutube
                   size={20}
-                  className="relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
+                  className="relative z-[1] cursor-pointer bg-transparent text-gray-400 transition-all hover:scale-110 hover:text-primaryGreen"
                 />
               </a>
               {/* linkdin */}
@@ -131,7 +131,7 @@ const HeroSplit = () => {
                 className="text-gray-400 transition duration-100 hover:text-primaryGreen active:text-gray-600"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="h-5 w-5"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -148,7 +148,7 @@ const HeroSplit = () => {
                 className="text-gray-400 transition duration-100 hover:text-primaryGreen active:text-primaryGreen"
               >
                 <svg
-                  className="w-5 h-5"
+                  className="h-5 w-5"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"

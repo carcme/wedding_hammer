@@ -4,10 +4,10 @@ const homeData = {
     title: "In the heart of Dahme-Spreewald",
 
     btn1: "Check Availability",
-    btn2: "Book a Tour",
+    btn2: "Book Tour",
 
     capacityTitle: "Capacity",
-    capacity: "70",
+    capacity: 50,
 
     pricesTitle: "Prices",
     prices: "from 100€",
@@ -27,7 +27,7 @@ const homeData = {
     btn2: "Eine Tour buchen",
 
     capacityTitle: "Kapazität",
-    capacity: "70",
+    capacity: 50,
 
     pricesTitle: "kosten",
     prices: "von 100€",
@@ -38,7 +38,7 @@ const homeData = {
     somethingTitle: "Etwas hier",
     something: "Oder Löschen",
 
-    social: "Soziale",
+    social: "Social",
   },
 };
 export default homeData;

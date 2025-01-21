@@ -20,7 +20,7 @@ const Booking = ({}) => {
   //   return <Navigate to={"/mystery"} />;
   // }
 
-  const { id, title, intro, image, subTitle, players, difficulty, cost, slug } =
+  const { id, title, intro, image, subTitle, players, difficulty, slug } =
     data.mysteries[0];
 
   const heroImage = getAssetImageURL(image);
@@ -30,7 +30,7 @@ const Booking = ({}) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+  }, []);
   return (
     <>
       <div className="py-6 bg-almostWhite sm:py-8 ">
@@ -93,7 +93,6 @@ const Booking = ({}) => {
             <BookingForm
               title={title}
               players={players}
-              cost={cost}
               bookingText={bookingText}
             />
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import vendorList from "../data/vendorsList";
-import { getLanguage } from "../LanguageContext";
+import vendorList from "../../data/vendorsListOld";
+import { getLanguage } from "../../LanguageContext";
 import { Link } from "react-router-dom";
 
 import { FaChevronRight } from "react-icons/fa6";
@@ -11,8 +11,8 @@ const Vendors = () => {
   return (
     <>
       {vl.title !== "" && (
-        <div className="mx-auto text-center ">
-          <h1 className="p-4 text-4xl font-normal tracking-widest lg:text-6xl font-Alegreya">
+        <div className="mx-auto text-center">
+          <h1 className="p-4 font-Alegreya text-4xl font-normal tracking-widest lg:text-6xl">
             {vl.title}
             {vl.subTitle && <h2 className="text-xl">{vl.subTitle}</h2>}
           </h1>
@@ -27,7 +27,7 @@ const Vendors = () => {
               }`}
             />
             <div
-              className={`flex flex-wrap justify-center max-w-7xl mx-auto items-center `}
+              className={`mx-auto flex max-w-7xl flex-wrap items-center justify-center`}
             >
               <div className="">
                 <img
@@ -37,19 +37,19 @@ const Vendors = () => {
                     objectFit: "cover",
                     objectPosition: "center",
                   }}
-                  className="inline-block w-full shadow-2xl md:size-96 border-primaryGreen"
+                  className="inline-block w-full border-primaryGreen shadow-2xl md:size-96"
                 />
               </div>
               <div
-                className={`w-full md:w-3/5 lg:w-1/2 px-4 text-center md:text-left lg:pl-12 ${
+                className={`w-full px-4 text-center md:w-3/5 md:text-left lg:w-1/2 lg:pl-12 ${
                   index % 2 === 0 ? "md:order-first" : ""
                 } `}
               >
-                <h2 className="pb-4 text-xl font-normal leading-9 tracking-widest uppercase sm:text-4xl font-Alegreya">
+                <h2 className="pb-4 font-Alegreya text-xl font-normal uppercase leading-9 tracking-widest sm:text-4xl">
                   {section.title}
                 </h2>
                 {section.textTop.map((para, i) => (
-                  <p key={i} className="leading-7 sm:text-xl font-Alegreya">
+                  <p key={i} className="font-Alegreya leading-7 sm:text-xl">
                     {para}
                   </p>
                 ))}
@@ -61,7 +61,7 @@ const Vendors = () => {
                 {section.textBottom.map((para, i) => (
                   <p
                     key={i}
-                    className="mt-6 leading-7 sm:text-xl font-Alegreya"
+                    className="mt-6 font-Alegreya leading-7 sm:text-xl"
                   >
                     {para}
                   </p>

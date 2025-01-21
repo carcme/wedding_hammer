@@ -10,7 +10,7 @@ import { BsBrowserChrome } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { getAssetImageURL } from "@/lib/image-util";
 
-const ProfileCard = ({
+const VendorProfileCard = ({
   image,
   imageAlt,
   name,
@@ -21,9 +21,8 @@ const ProfileCard = ({
   facebook,
   twitter,
   linkedin,
+  youtube,
 }) => {
-  console.log("name", name, name.length);
-
   if (!image.startsWith("https")) {
     image = getAssetImageURL(image);
   }
@@ -31,87 +30,86 @@ const ProfileCard = ({
   return (
     <>
       {name.length > 0 && (
-        <div className="flex flex-row h-full pt-4 align-middle sm:flex-col min-h-96 lg:min-w-64 ">
-          <div className="flex flex-col flex-1 max-w-sm">
+        <div className="flex h-full min-h-96 flex-row pt-4 sm:flex-col md:align-middle lg:min-w-64">
+          <div className="flex-0 flex flex-grow flex-col md:max-w-sm">
             <img
-              className="object-cover w-20 h-20 overflow-hidden rounded-full"
+              className="h-20 w-20 overflow-hidden rounded-full object-cover"
               src={image}
               alt={imageAlt}
             />
             <div className="py-4 font-Montserrat">
-              <div className="mb-2 text-[16px] tracking-widest text-gray-700 font-semibold ">
+              <div className="mb-2 text-[16px] font-semibold tracking-widest text-gray-700">
                 {name}
               </div>
-              <div className="mb-6 font-light tracking-widest font-Cormorant w-fulltext-sm">
+              <div className="w-fulltext-sm mb-6 font-Cormorant font-light tracking-widest">
                 {service}
               </div>
-              <p className="font-Lora text-[14px] tracking-widest text-gray-700 font-thin">
+              <p className="font-Lora text-[14px] font-thin tracking-widest text-gray-700">
                 {comments}
               </p>
             </div>
           </div>
-          <div className="items-end text-white sm:space-x-4 sm:py-4 ">
+          <div className="items-end text-white sm:space-x-4 sm:py-4">
             {website.length > 0 && (
               <Link to={website} target="_blank">
                 <span className="sm:inline-block">
                   <BsBrowserChrome
                     size={20}
-                    className="mb-2 relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
+                    className="relative z-[1] mb-2 cursor-pointer bg-transparent text-gray-400 transition-all hover:scale-110 hover:text-primaryGreen"
                   />
                 </span>
               </Link>
             )}
             {twitter.length > 0 && (
               <Link to={twitter} target="_blank">
-                <span className="sm:inline-block ">
+                <span className="inline-block">
                   <FaTwitter
                     size={20}
-                    className="mb-2 relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
+                    className="relative z-[1] mb-2 cursor-pointer bg-transparent text-gray-400 transition-all hover:scale-110 hover:text-primaryGreen"
                   />{" "}
                 </span>
               </Link>
             )}
             {insta.length > 0 && (
               <Link to={insta} target="_blank">
-                <span className="sm:inline-block ">
+                <span className="sm:inline-block">
                   <FaInstagram
                     size={20}
-                    className="mb-2 relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
+                    className="relative z-[1] mb-2 cursor-pointer bg-transparent text-gray-400 transition-all hover:scale-110 hover:text-primaryGreen"
                   />
                 </span>
               </Link>
             )}
             {facebook.length > 0 && (
               <Link to={facebook} target="_blank">
-                <span className="sm:inline-block ">
+                <span className="sm:inline-block">
                   <FaFacebook
                     size={20}
-                    className="mb-2 relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
+                    className="relative z-[1] mb-2 cursor-pointer bg-transparent text-gray-400 transition-all hover:scale-110 hover:text-primaryGreen"
                   />
                 </span>
               </Link>
             )}
             {linkedin.length > 0 && (
               <Link to={linkedin} target="_blank">
-                <span className="sm:inline-block ">
+                <span className="sm:inline-block">
                   <FaLinkedin
                     size={20}
-                    className="mb-2 relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
+                    className="relative z-[1] mb-2 cursor-pointer bg-transparent text-gray-400 transition-all hover:scale-110 hover:text-primaryGreen"
                   />
                 </span>
               </Link>
             )}
-            {linkedin.length > 0 && (
-              <Link to={linkedin} target="_blank">
-                <span className="sm:inline-block ">
+            {youtube.length > 0 && (
+              <Link to={youtube} target="_blank">
+                <span className="sm:inline-block">
                   <FaYoutube
                     size={20}
-                    className="mb-2 relative z-[1] transition-all  cursor-pointer bg-transparent hover:scale-110 text-gray-400 hover:text-primaryGreen"
+                    className="relative z-[1] mb-2 cursor-pointer bg-transparent text-gray-400 transition-all hover:scale-110 hover:text-primaryGreen"
                   />
                 </span>
               </Link>
             )}
-            FaYoutube
           </div>
         </div>
       )}
@@ -119,4 +117,4 @@ const ProfileCard = ({
   );
 };
 
-export default ProfileCard;
+export default VendorProfileCard;
