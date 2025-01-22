@@ -17,7 +17,7 @@ export function useLanguageChange() {
 }
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState("de");
 
   function changeLanguage(lang) {
     setLanguage(language === "en" ? "de" : "en");

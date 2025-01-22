@@ -5,7 +5,7 @@ const ImageCard = ({ image, blendMode }) => {
   return (
     <>
       <section
-        className={`color-white relative h-screen w-full`}
+        className={`color-white relative`}
         style={{
           background: `url(${image})`,
           boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.1)",

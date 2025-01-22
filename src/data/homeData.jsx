@@ -24,7 +24,7 @@ const homeData = {
     teaser: "Feiern unter den Bäumen",
     title: "Im Herzen von Dahme-Spreewald",
     btn1: "Verfügbarkeit prüfen",
-    btn2: "Eine Tour buchen",
+    btn2: "Tour buchen",
 
     capacityTitle: "Kapazität",
     capacity: 50,

@@ -3,13 +3,13 @@ import React from "react";
 const FullPage = ({ headline, subheading }) => {
   return (
     <>
-      <section class="container flex pt-32 flex-col items-center px-6 py-12 mx-auto lg:flex-row">
+      <section class="container mx-auto flex flex-col items-center px-6 py-12 pt-32 lg:flex-row">
         <div class="lg:w-1/2">
-          <h1 class="max-w-xl font-serif text-4xl font-medium tracking-wide text-[#343D33] capitalize md:text-6xl ">
+          <h1 class="max-w-xl font-serif text-4xl font-medium capitalize tracking-wide text-[#343D33] md:text-6xl">
             Recommended Vendors
           </h1>
 
-          <p class="max-w-lg mt-4 text-gray-500">
+          <p class="mt-4 max-w-lg text-gray-500">
             Wedding vendors are an important part of your event. We have
             developed a list of recommended vendors for our venue.
           </p>
@@ -17,44 +17,44 @@ const FullPage = ({ headline, subheading }) => {
           <div class="mt-6 sm:flex sm:items-center">
             <a
               href="#"
-              class="bg-[#475F45] hover:bg-[#475F45]/80 duration-300 transition-colors border-2 border-[#475F45] px-6 block text-center py-3 uppercase text-sm font-bold leading-4 tracking-widest text-white "
+              class="block border-2 border-[#475F45] bg-[#475F45] px-6 py-3 text-center text-sm font-bold uppercase leading-4 tracking-widest text-white transition-colors duration-300 hover:bg-[#475F45]/80"
             >
               Buy Tickets
             </a>
 
             <a
               href="#"
-              class="border-2 text-sm duration-300 transition-colors hover:bg-[#475F45] hover:text-white font-bold leading-4 mt-4 sm:mt-0 tracking-widest text-[#475F45] sm:mx-4 border-[#475F45] px-6 block text-center py-3 uppercase"
+              class="mt-4 block border-2 border-[#475F45] px-6 py-3 text-center text-sm font-bold uppercase leading-4 tracking-widest text-[#475F45] transition-colors duration-300 hover:bg-[#475F45] hover:text-white sm:mx-4 sm:mt-0"
             >
               Learn More
             </a>
           </div>
         </div>
 
-        <div class="h-[38rem] mt-12 lg:mt-0 w-full mx-auto max-w-md overflow-hidden rounded-t-full outline outline-4 outline-offset-4 outline-[#475F45]/40">
+        <div class="mx-auto mt-12 h-[38rem] w-full max-w-md overflow-hidden rounded-t-full outline outline-4 outline-offset-4 outline-[#475F45]/40 lg:mt-0">
           <img
-            class="object-cover w-full h-full rounded-t-full "
-            src="../assets/image/forest_wedding.webp"
+            class="h-full w-full rounded-t-full object-cover"
+            src="../assets/image/cerimony_port.jpg"
             alt="main page"
           />
         </div>
       </section>
 
-      <section class="bg-[#343D33] mt-12">
-        <div class="container flex flex-col px-6 py-16 mx-auto mt-12">
-          <div class="order-2 mt-8 lg:order-1 lg:mt-0 lg:flex lg:items-center lg:-mx-6">
+      <section class="mt-12 bg-[#343D33]">
+        <div class="container mx-auto mt-12 flex flex-col px-6 py-16">
+          <div class="order-2 mt-8 lg:order-1 lg:-mx-6 lg:mt-0 lg:flex lg:items-center">
             <img
-              class="object-cover w-full lg:w-1/2 lg:mx-6 h-72 lg:h-96"
+              class="h-72 w-full object-cover lg:mx-6 lg:h-96 lg:w-1/2"
               src="https://images.unsplash.com/photo-1598901847919-b95dd0fabbb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
               alt=""
             />
 
-            <div class="mt-8 lg:w-1/2 lg:mx-6 lg:mt-0">
-              <h3 class="font-serif text-2xl text-white capitalize md:text-4xl lg:text-5xl">
+            <div class="mt-8 lg:mx-6 lg:mt-0 lg:w-1/2">
+              <h3 class="font-serif text-2xl capitalize text-white md:text-4xl lg:text-5xl">
                 Discover yourself with nature
               </h3>
 
-              <p class="mt-4 text-gray-200 ">
+              <p class="mt-4 text-gray-200">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quibusdam, nisi fugiat dicta impedit sed quisquam quas veritatis
                 consectetur neque saepe, autem facilis dolore officiis minima
@@ -62,7 +62,7 @@ const FullPage = ({ headline, subheading }) => {
               </p>
 
               <a
-                class="inline-flex px-6 py-3 mt-6 text-white border-2 border-white hover:bg-[#475F45] duration-300 transition-colors"
+                class="mt-6 inline-flex border-2 border-white px-6 py-3 text-white transition-colors duration-300 hover:bg-[#475F45]"
                 href="#"
               >
                 Learn More
@@ -71,22 +71,22 @@ const FullPage = ({ headline, subheading }) => {
           </div>
 
           <img
-            class="order-1 object-cover lg:order-2 w-ful h-72 lg:h-96 lg:mt-12"
+            class="w-ful order-1 h-72 object-cover lg:order-2 lg:mt-12 lg:h-96"
             src="https://images.unsplash.com/photo-1610462275440-4ea0976f46f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
             alt=""
           />
         </div>
       </section>
 
-      <section class="container px-6 py-12 mx-auto lg:py-16">
-        <h3 class="font-serif text-3xl text-[#343D33] capitalize md:text-4xl lg:text-5xl">
+      <section class="container mx-auto px-6 py-12 lg:py-16">
+        <h3 class="font-serif text-3xl capitalize text-[#343D33] md:text-4xl lg:text-5xl">
           News & Updates
         </h3>
 
         <div class="mt-8 xl:-mx-6 xl:flex">
-          <div class="xl:w-1/2 xl:mx-6">
+          <div class="xl:mx-6 xl:w-1/2">
             <img
-              class="object-cover w-full h-96"
+              class="h-96 w-full object-cover"
               src="https://images.unsplash.com/photo-1626838524909-7c584c2266f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
               alt=""
             />
@@ -104,16 +104,16 @@ const FullPage = ({ headline, subheading }) => {
             <p class="mt-4 italic text-gray-600">December 23, 2021</p>
           </div>
 
-          <div class="mt-8 space-y-8 xl:w-1/2 xl:mx-6 xl:mt-0">
+          <div class="mt-8 space-y-8 xl:mx-6 xl:mt-0 xl:w-1/2">
             <div class="md:-mx-4 md:flex md:items-center">
               <img
-                class="object-cover w-full h-56 md:h-48 md:mx-4 md:w-80 shrink-0"
+                class="h-56 w-full shrink-0 object-cover md:mx-4 md:h-48 md:w-80"
                 src="https://images.unsplash.com/photo-1556426356-0fdc8b663467?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1498&q=80"
                 alt=""
               />
 
               <div class="mt-6 md:mx-4 md:mt-0">
-                <h2 class="font-serif text-2xl font-medium text-gray-700 ">
+                <h2 class="font-serif text-2xl font-medium text-gray-700">
                   Lush Gardens
                 </h2>
 
@@ -128,13 +128,13 @@ const FullPage = ({ headline, subheading }) => {
 
             <div class="md:-mx-4 md:flex md:items-center">
               <img
-                class="object-cover w-full h-56 md:h-48 md:mx-4 md:w-80 shrink-0"
+                class="h-56 w-full shrink-0 object-cover md:mx-4 md:h-48 md:w-80"
                 src="https://images.unsplash.com/photo-1583470790878-4f4f3811a01f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"
                 alt=""
               />
 
               <div class="mt-6 md:mx-4 md:mt-0">
-                <h2 class="font-serif text-2xl font-medium text-gray-700 ">
+                <h2 class="font-serif text-2xl font-medium text-gray-700">
                   Exotic Nature
                 </h2>
 
@@ -149,13 +149,13 @@ const FullPage = ({ headline, subheading }) => {
 
             <div class="md:-mx-4 md:flex md:items-center">
               <img
-                class="object-cover w-full h-56 md:h-48 md:mx-4 md:w-80 shrink-0"
+                class="h-56 w-full shrink-0 object-cover md:mx-4 md:h-48 md:w-80"
                 src="https://images.unsplash.com/photo-1638790491374-a2affccd8c8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                 alt=""
               />
 
               <div class="mt-6 md:mx-4 md:mt-0">
-                <h2 class="font-serif text-2xl font-medium text-gray-700 ">
+                <h2 class="font-serif text-2xl font-medium text-gray-700">
                   It Starts with Soil
                 </h2>
 
@@ -172,11 +172,11 @@ const FullPage = ({ headline, subheading }) => {
       </section>
 
       <footer class="bg-[#414840]">
-        <div class="container px-6 py-8 mx-auto space-y-8 lg:space-y-0 lg:flex lg:justify-between">
+        <div class="container mx-auto space-y-8 px-6 py-8 lg:flex lg:justify-between lg:space-y-0">
           <div>
-            <a class="flex items-center -mx-2" href="#">
+            <a class="-mx-2 flex items-center" href="#">
               <svg
-                class="w-10 h-10 mx-2"
+                class="mx-2 h-10 w-10"
                 width="48"
                 height="48"
                 viewBox="0 0 48 48"
@@ -192,16 +192,16 @@ const FullPage = ({ headline, subheading }) => {
               </svg>
 
               <div class="mx-2 text-white">
-                <h3 class="font-medium tracking-widest uppercase">
+                <h3 class="font-medium uppercase tracking-widest">
                   Mist Gardens
                 </h3>
-                <p class="mt-1 text-xs italic leading-3 tracking-wide capitalize">
+                <p class="mt-1 text-xs capitalize italic leading-3 tracking-wide">
                   museum & botanical garden
                 </p>
               </div>
             </a>
 
-            <p class="max-w-lg mt-6 leading-relaxed text-white ">
+            <p class="mt-6 max-w-lg leading-relaxed text-white">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
               voluptatum amet molestiae consequatur quam velit sint modi aut
               illo dolorem.
@@ -230,9 +230,9 @@ const FullPage = ({ headline, subheading }) => {
           </div>
 
           <div>
-            <p class="font-medium text-white capitalize">Connect</p>
+            <p class="font-medium capitalize text-white">Connect</p>
 
-            <div class="flex mt-6 -mx-4">
+            <div class="-mx-4 mt-6 flex">
               <a class="mx-4 text-white hover:text-gray-300" href="#">
                 <svg
                   width="24"
@@ -329,7 +329,7 @@ const FullPage = ({ headline, subheading }) => {
           </div>
         </div>
 
-        <p class="w-full py-6 mx-auto text-white text-center bg-[#343D33]">
+        <p class="mx-auto w-full bg-[#343D33] py-6 text-center text-white">
           &copy; 2022 Mist Gardens. All rights reserved.
         </p>
       </footer>

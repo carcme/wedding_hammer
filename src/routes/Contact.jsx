@@ -4,17 +4,26 @@ import SubscribeComponent from "@/components/Forms/SubscribeComponent";
 import contactUsText from "@/data/contactPageText";
 import Faq from "../components/Faq";
 import faqData from "@/data/faqData";
-import { getLanguage } from "@/LanguageContext";
-
+import { getLanguage, useLanguage } from "@/LanguageContext";
+import { Helmet } from "react-helmet-async";
+import helmetData from "@/data/helmetData";
 const Contact = () => {
   const text = getLanguage(contactUsText);
   const faq = getLanguage(faqData);
+  const meta = getLanguage(helmetData);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <>
+      <Helmet htmlAttributes={{ lang: useLanguage() }}>
+        <title>{meta.titleContact}</title>
+        <meta name="description" content={meta.descContact} />
+        <meta name="robots" content={meta.robots} />
+        <meta name="charSet" content={meta.charset} />
+      </Helmet>
       <div className="bg-almostWhite">
         <div className="flex w-full flex-col px-4 pt-40 text-center text-primaryGreen lg:px-40">
           <h1 className="animate-bgBlur mb-4 text-2xl font-bold sm:text-5xl">

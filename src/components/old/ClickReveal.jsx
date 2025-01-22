@@ -8,14 +8,14 @@ const ClickReveal = ({ heading, listItems }) => {
     <>
       <label>
         <input
-          className="absolute scale-0 cursor-pointer select-none sr-only peer/showLabel"
+          className="peer/showLabel sr-only absolute scale-0 cursor-pointer select-none"
           type="checkbox"
         />
 
-        <span className="block max-w-full mt-4 overflow-hidden transition-all duration-300 border-t border-b group peer/showLabel max-h-14 peer-checked/showLabel:max-h-96 border-primaryGreen ">
+        <span className="peer/showLabel group mt-4 block max-h-14 max-w-full overflow-hidden border-b border-t border-primaryGreen transition-all duration-300 peer-checked/showLabel:max-h-96">
           <div className="flex items-center">
             <FaChevronRight className="mr-4 size-4 text-primaryGreen transition-transform duration-300 group-[:checked+&]:rotate-90" />
-            <h3 className="flex items-center text-2xl font-bold tracking-widest cursor-pointer h-14 font-Amatic">
+            <h3 className="flex h-14 cursor-pointer items-center font-Amatic text-2xl font-bold tracking-widest">
               {heading}
             </h3>
           </div>
@@ -24,13 +24,13 @@ const ClickReveal = ({ heading, listItems }) => {
               {/* Link Items */}
               {item.link && (
                 <ul className="relative">
-                  <li className="my-6 px-8 sm:text-lg font-Montserrat before:absolute before:content-[''] before:left-2 before:top-[13px] before:h-[1px] before:w-4 before:rounded-full before:bg-accentDecoration before:transition-all before:duration-200 translate-x-[-5px]">
+                  <li className="my-6 translate-x-[-5px] px-8 font-Montserrat before:absolute before:left-2 before:top-[13px] before:h-[1px] before:w-4 before:rounded-full before:bg-accentDecoration before:transition-all before:duration-200 before:content-[''] sm:text-lg">
                     <Link
                       key={index}
                       to={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primaryGreenDark font-Alegreya"
+                      className="font-Alegreya text-primaryGreenDark"
                     >
                       {item.text}
                     </Link>

@@ -36,7 +36,7 @@ const Navbar = () => {
   });
   return (
     <div
-      className={`fixed top-0 z-50 mx-auto flex h-24 w-full items-center justify-between px-2 text-white transition-colors duration-700 ease-in-out xl:px-40 ${
+      className={`fixed top-0 z-50 mx-auto flex h-24 w-full items-center justify-between text-white transition-colors duration-700 ease-in-out xl:px-40 ${
         scrollPosition < 100 ? "bg-primaryGreen" : "bg-primaryGreen/90"
       } ${isOpen ? "bg-primaryGreenDark" : ""} `}
     >

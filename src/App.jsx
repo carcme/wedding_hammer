@@ -3,6 +3,7 @@ import { LanguageProvider } from "./LanguageContext";
 import { Outlet } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "./components/Footer";
+import { HelmetProvider } from "react-helmet-async";
 
 function App() {
   console.log("App");
@@ -10,11 +11,11 @@ function App() {
   return (
     <>
       <LanguageProvider>
-        <Navbar />
-
-        <Outlet />
-
-        <Footer />
+        <HelmetProvider>
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </HelmetProvider>
       </LanguageProvider>
     </>
   );

@@ -7,37 +7,38 @@ import BookingForm from "@/components/Forms/BookingForm";
 
 import bookingPageText from "../data/bookingPageText";
 import { BookingData } from "@/data/BookingData";
-import { getLanguage } from "@/LanguageContext";
+import { getLanguage, useLanguage } from "@/LanguageContext";
+import { Helmet } from "react-helmet-async";
+import helmetData from "@/data/helmetData";
 
 const Booking = ({}) => {
   const location = useLocation();
 
   const data = getLanguage(BookingData);
   const bookingText = getLanguage(bookingPageText);
-
-  // if (location === null || location.state === null) {
-  //   console.log("Error - No mystery data, redirect to select page ");
-  //   return <Navigate to={"/mystery"} />;
-  // }
+  const meta = getLanguage(helmetData);
 
   const { id, title, intro, image, subTitle, players, difficulty, slug } =
     data.mysteries[0];
 
   const heroImage = getAssetImageURL(image);
 
-  console.log("title ", title);
-  console.log("intro.length ", intro.length);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
     <>
-      <div className="py-6 bg-almostWhite sm:py-8 ">
-        <div className="px-4 pt-24 mx-auto max-w-screen-2xl md:px-8">
+      <Helmet htmlAttributes={{ lang: useLanguage() }}>
+        <title>{meta.titleBooking}</title>
+        <meta name="description" content={meta.descBooking} />
+        <meta name="robots" content={meta.robots} />
+        <meta name="charSet" content={meta.charset} />
+      </Helmet>
+      <div className="bg-almostWhite py-6 sm:py-8">
+        <div className="mx-auto max-w-screen-2xl px-4 pt-24 md:px-8">
           <div className="flex flex-col overflow-hidden rounded-lg bg-primaryGreen sm:flex-row xl:h-96">
             {/* <!-- content - start --> */}
-            <div className="flex flex-col w-full p-4 sm:w-1/2 sm:p-8 lg:w-2/5">
+            <div className="flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-2/5">
               <h2 className="mb-4 text-xl font-bold text-almostWhite md:text-2xl lg:text-4xl">
                 {title[0]}
                 {/* Your Day */}
@@ -46,8 +47,8 @@ const Booking = ({}) => {
                 {title[1]}
               </h2>
 
-              <p className="max-w-md mb-8 text-gray-300">{subTitle[0]}</p>
-              <p className="max-w-md mb-8 text-gray-300">{subTitle[1]}</p>
+              <p className="mb-8 max-w-md text-gray-300">{subTitle[0]}</p>
+              <p className="mb-8 max-w-md text-gray-300">{subTitle[1]}</p>
               {/* add a button ??? */}
               {/* <div className="mt-auto">
                 <a
@@ -61,32 +62,31 @@ const Booking = ({}) => {
             {/* <!-- content - end --> */}
 
             {/* <!-- image - start --> */}
-            <div className="order-first w-full h-48 bg-gray-700 sm:order-none sm:h-auto sm:w-1/2 lg:w-3/5">
+            <div className="order-first h-48 w-full bg-gray-700 sm:order-none sm:h-auto sm:w-1/2 lg:w-3/5">
               <img
                 src={heroImage}
                 loading="lazy"
                 alt=""
-                className="object-cover object-center w-full h-full"
+                className="h-full w-full object-cover object-center"
               />
             </div>
             {/* <!-- image - end --> */}
           </div>
         </div>
       </div>
-
-      <div className="relative text-gray-900 bg-almostWhite">
-        <div className="flex flex-col justify-between max-w-screen-lg px-4 mx-auto sm:px-6 lg:px-8">
+      <div className="relative bg-almostWhite text-gray-900">
+        <div className="mx-auto flex max-w-screen-lg flex-col justify-between px-4 sm:px-6 lg:px-8">
           {intro.length > 0 && (
             <div className="">
               {intro.map((para, index) => (
-                <h3 key={index} className="pt-4 sm:text-xl font-Montserrat">
+                <h3 key={index} className="pt-4 font-Montserrat sm:text-xl">
                   {para}
                 </h3>
               ))}
             </div>
           )}
           <div className="section-divider-white"></div>
-          <div className="pb-20 text-2xl font-bold text-center sm:text-4xl font-Montserrat">
+          <div className="pb-20 text-center font-Montserrat text-2xl font-bold sm:text-4xl">
             <p>{bookingText.bookNow}</p>
           </div>
           <div className="">

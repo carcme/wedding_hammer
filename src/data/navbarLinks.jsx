@@ -17,8 +17,8 @@ const navbarLinks = {
       text: "gallery",
     },
     {
-      path: "/about",
-      text: "about",
+      path: "/contact",
+      text: "Contact",
     },
   ],
   de: [
@@ -39,8 +39,8 @@ const navbarLinks = {
       text: "Galerie",
     },
     {
-      path: "/about",
-      text: "About",
+      path: "/contact",
+      text: "Kontakt",
     },
   ],
 };

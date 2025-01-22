@@ -12,16 +12,15 @@ const HeroSplit = () => {
     <div className="bg-almostWhite pb-6 pt-24 sm:pb-8 lg:pb-12 lg:pt-44">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <section className="mb-8 flex flex-col justify-between gap-6 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
-          <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
-            <p className="my-4 font-semibold text-primaryGreen md:mb-6 md:text-lg xl:text-xl">
+          <div className="flex flex-col items-center justify-center text-center lg:py-12 xl:w-5/12 xl:text-left">
+            <h1 className="my-4 w-full font-semibold text-primaryGreen md:mb-6 md:text-lg xl:text-xl">
               {data.teaser}
-            </p>
-
+            </h1>
             <h1 className="mb-8 max-w-xl font-serif text-4xl font-medium capitalize tracking-wide text-gray-800 md:text-6xl">
               {data.title}
             </h1>
 
-            <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
+            <div className="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
               <Link
                 to="/booking"
                 className="inline-block rounded-lg bg-primaryGreen px-8 py-3 text-center text-sm font-semibold text-almostWhite outline-none ring-2 ring-primaryGreen transition duration-100 hover:bg-accentDecoration focus-visible:ring active:bg-accentDecoration md:text-base"
@@ -102,7 +101,7 @@ const HeroSplit = () => {
 
             <div className="flex gap-4">
               {/* instagram */}
-              <a href="#">
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <span className="inner"></span>
                 <FaInstagram
                   size={20}
@@ -110,14 +109,14 @@ const HeroSplit = () => {
                 />
               </a>
               {/* twitter */}
-              <a href="#">
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <span className="inner"></span>
                 <FaTwitter
                   size={20}
                   className="relative z-[1] cursor-pointer bg-transparent text-gray-400 transition-all hover:scale-110 hover:text-primaryGreen"
                 />
               </a>
-              <a href="#">
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <span className="inner"></span>
                 <FaYoutube
                   size={20}
@@ -128,6 +127,7 @@ const HeroSplit = () => {
               <a
                 href="#"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 transition duration-100 hover:text-primaryGreen active:text-gray-600"
               >
                 <svg
@@ -145,6 +145,7 @@ const HeroSplit = () => {
               <a
                 href="#"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 transition duration-100 hover:text-primaryGreen active:text-primaryGreen"
               >
                 <svg

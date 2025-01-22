@@ -51,7 +51,7 @@ const VendorProfileCard = ({
           </div>
           <div className="items-end text-white sm:space-x-4 sm:py-4">
             {website.length > 0 && (
-              <Link to={website} target="_blank">
+              <Link to={website} target="_blank" rel="noopener noreferrer">
                 <span className="sm:inline-block">
                   <BsBrowserChrome
                     size={20}
@@ -61,7 +61,7 @@ const VendorProfileCard = ({
               </Link>
             )}
             {twitter.length > 0 && (
-              <Link to={twitter} target="_blank">
+              <Link to={twitter} target="_blank" rel="noopener noreferrer">
                 <span className="inline-block">
                   <FaTwitter
                     size={20}
@@ -71,7 +71,7 @@ const VendorProfileCard = ({
               </Link>
             )}
             {insta.length > 0 && (
-              <Link to={insta} target="_blank">
+              <Link to={insta} target="_blank" rel="noopener noreferrer">
                 <span className="sm:inline-block">
                   <FaInstagram
                     size={20}
@@ -81,7 +81,7 @@ const VendorProfileCard = ({
               </Link>
             )}
             {facebook.length > 0 && (
-              <Link to={facebook} target="_blank">
+              <Link to={facebook} target="_blank" rel="noopener noreferrer">
                 <span className="sm:inline-block">
                   <FaFacebook
                     size={20}
@@ -91,7 +91,7 @@ const VendorProfileCard = ({
               </Link>
             )}
             {linkedin.length > 0 && (
-              <Link to={linkedin} target="_blank">
+              <Link to={linkedin} target="_blank" rel="noopener noreferrer">
                 <span className="sm:inline-block">
                   <FaLinkedin
                     size={20}
@@ -101,7 +101,7 @@ const VendorProfileCard = ({
               </Link>
             )}
             {youtube.length > 0 && (
-              <Link to={youtube} target="_blank">
+              <Link to={youtube} target="_blank" rel="noopener noreferrer">
                 <span className="sm:inline-block">
                   <FaYoutube
                     size={20}

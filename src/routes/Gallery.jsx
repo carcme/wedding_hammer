@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import PhotoAlbum from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { getLanguage, useLanguage } from "@/LanguageContext";
+import { Helmet } from "react-helmet-async";
+import helmetData from "@/data/helmetData";
 
 // import optional lightbox plugins
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
@@ -18,7 +21,7 @@ const images = import.meta.glob("/assets/image/*.{webp,png,jpg,jpeg,svg}", {
 });
 
 const Gallery = () => {
-  // const [layout, setLayout] = useState("rows");
+  const meta = getLanguage(helmetData);
   const [index, setIndex] = useState(-1);
 
   const photos = Object.values(images).map((image, key) => ({
@@ -44,6 +47,12 @@ const Gallery = () => {
   }, []);
   return (
     <>
+      <Helmet htmlAttributes={{ lang: useLanguage() }}>
+        <title>{meta.titleGallery}</title>
+        <meta name="description" content={meta.descGallery} />
+        <meta name="robots" content={meta.robots} />
+        <meta name="charSet" content={meta.charset} />
+      </Helmet>
       <div className="px-4 pb-5 pt-28">
         {/* <button
           className={`text-white px-2 flex w-full justify-end py-2 mb-5  capitalize cursor-pointer bg-primaryGreen`}
