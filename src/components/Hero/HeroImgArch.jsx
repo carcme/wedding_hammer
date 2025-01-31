@@ -6,7 +6,7 @@ const HeroImgArch = ({ headline, subheading, image }) => {
     <>
       <section className="container mx-auto flex flex-col items-center py-12 pt-32 lg:flex-row">
         <div className="lg:w-1/2">
-          <h1 className="max-w-xl font-Hind text-4xl font-medium capitalize tracking-wide text-primaryGreen md:text-6xl lg:pr-10">
+          <h1 className="font-Jost max-w-xl text-4xl font-medium capitalize tracking-wide text-primaryGreen md:text-6xl lg:pr-10">
             {headline}
           </h1>
 

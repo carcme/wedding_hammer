@@ -33,7 +33,7 @@ export default function AccordionElement(props) {
           />
         </svg>
         <button
-          className={`w-full p-2 text-left font-Alegreya text-sm tracking-widest text-almostWhite transition duration-300 sm:p-3`}
+          className={`font-Jost w-full p-2 text-left text-sm tracking-widest text-almostWhite transition duration-300 sm:p-3`}
           onClick={toggleAccordion}
         >
           {title}
@@ -51,7 +51,7 @@ export default function AccordionElement(props) {
               {text.map((paragraph, i) => (
                 <div key={i} className="">
                   <p
-                    className="break-words pb-4 pl-10 pr-10 text-left font-Montserrat text-sm leading-loose tracking-wide text-neutral-100 sm:pl-[93px]"
+                    className="font-Jost break-words pb-4 pl-10 pr-10 text-left text-sm font-light leading-loose tracking-wide text-neutral-100 sm:pl-[93px]"
                     onClick={props.toggleAccordion}
                   >
                     {paragraph}
@@ -62,7 +62,7 @@ export default function AccordionElement(props) {
             <div className="flex items-center justify-end">
               {link?.length > 0 && (
                 <Link to={link} onClick={toggleAccordion}>
-                  <button className="rounded bg-primaryGreenDark px-4 py-2 text-center font-bold text-white transition duration-200 hover:bg-almostWhite hover:text-primaryGreen">
+                  <button className="font-Jost rounded bg-primaryGreenDark px-4 py-2 text-center font-bold text-white transition duration-200 hover:bg-almostWhite hover:text-primaryGreen">
                     {linkTxt}
                   </button>
                 </Link>

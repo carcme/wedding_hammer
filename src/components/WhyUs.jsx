@@ -7,8 +7,8 @@ const WhyUs = () => {
   const blendMode = true;
   return (
     <>
-      <div className="container mx-auto pt-20 text-center">
-        <h1 className="pb-10 font-Alegreya text-4xl font-normal tracking-widest lg:text-6xl">
+      <div className="font-Jost container mx-auto pt-20 text-center">
+        <h1 className="pb-10 text-4xl font-normal tracking-widest lg:text-6xl">
           {text.title}
         </h1>
 
@@ -40,11 +40,11 @@ const WhyUs = () => {
                 index % 2 === 0 ? "md:order-first" : ""
               } `}
             >
-              <h3 className="mt-8 font-Montserrat text-xl font-bold sm:text-2xl md:mt-0">
+              <h3 className="font-font-Jost mt-8 text-xl font-bold sm:text-2xl md:mt-0">
                 {item.title}
               </h3>
               {item.text.map((para, i) => (
-                <div key={i} className="mt-6 font-Montserrat sm:text-lg">
+                <div key={i} className="font-font-Jost mt-6 sm:text-lg">
                   {para}
                   {/* add padding to last paragraph when bg is primaryHoneyDew*/}
                   {item.text.length - 1 === i && index % 2 !== 0 && (

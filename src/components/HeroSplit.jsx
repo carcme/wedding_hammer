@@ -13,10 +13,10 @@ const HeroSplit = () => {
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <section className="mb-8 flex flex-col justify-between gap-6 sm:gap-10 md:mb-16 md:gap-16 lg:flex-row">
           <div className="flex flex-col items-center justify-center text-center lg:py-12 xl:w-5/12 xl:text-left">
-            <h1 className="my-4 w-full font-semibold text-primaryGreen md:mb-6 md:text-lg xl:text-xl">
+            <h1 className="font-Jost my-4 w-full font-semibold text-primaryGreen md:mb-6 md:text-lg xl:text-xl">
               {data.teaser}
             </h1>
-            <h1 className="mb-8 max-w-xl font-serif text-4xl font-medium capitalize tracking-wide text-gray-800 md:text-6xl">
+            <h1 className="font-Jost mb-8 max-w-xl text-4xl font-medium capitalize tracking-wide text-gray-800 md:text-6xl">
               {data.title}
             </h1>
 

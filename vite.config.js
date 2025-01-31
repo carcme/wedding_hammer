@@ -1,6 +1,7 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import path, { resolve } from "path";
+import { splitVendorChunkPlugin } from "vite";
 
 const root = resolve(__dirname, "src");
 const outDir = resolve(__dirname, "dist");
@@ -8,7 +9,7 @@ const outDir = resolve(__dirname, "dist");
 // https://vitejs.dev/config/
 export default defineConfig({
   root,
-  plugins: [react()],
+  plugins: [react(), splitVendorChunkPlugin()],
   base: "/",
   resolve: {
     alias: {

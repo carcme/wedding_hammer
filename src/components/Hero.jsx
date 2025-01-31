@@ -5,7 +5,7 @@ const Hero = ({ image, title, subTitle, blendMode }) => {
     <>
       <div
         alt=""
-        className="relative flex items-center justify-center w-full h-screen bg-bottom "
+        className="relative flex h-screen w-full items-center justify-center bg-bottom"
         style={{
           background: `url(${image})`,
           boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.2)",
@@ -15,15 +15,15 @@ const Hero = ({ image, title, subTitle, blendMode }) => {
       >
         {blendMode && (
           <div
-            className={`absolute w-full h-screen color-white bg-gradient-to-b from-transparent to-black from-60%`}
+            className={`color-white absolute h-screen w-full bg-gradient-to-b from-transparent from-60% to-black`}
           />
         )}
         <div className="text-white">
-          <h1 className="p-4 text-6xl font-bold text-center font-Amatic">
+          <h1 className="font-Jost p-4 text-center text-6xl font-bold">
             {title}
           </h1>
 
-          <h2 className="text-3xl text-center font-Hind">{subTitle}</h2>
+          <h2 className="font-Jost text-center text-3xl">{subTitle}</h2>
         </div>
       </div>
     </>

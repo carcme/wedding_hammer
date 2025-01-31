@@ -37,14 +37,14 @@ const VendorProfileCard = ({
               src={image}
               alt={imageAlt}
             />
-            <div className="py-4 font-Montserrat">
+            <div className="font-Jost py-4">
               <div className="mb-2 text-[16px] font-semibold tracking-widest text-gray-700">
                 {name}
               </div>
-              <div className="w-fulltext-sm mb-6 font-Cormorant font-light tracking-widest">
+              <div className="w-fulltext-sm font-Jost mb-6 font-light tracking-widest">
                 {service}
               </div>
-              <p className="font-Lora text-[14px] font-thin tracking-widest text-gray-700">
+              <p className="font-Jost text-[15px] tracking-widest text-gray-700">
                 {comments}
               </p>
             </div>

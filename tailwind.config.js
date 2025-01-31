@@ -11,13 +11,14 @@ export default {
     },
     extend: {
       fontFamily: {
-        Montserrat: ["Montserrat"],
-        Hind: ["Hind"],
-        Amatic: ["Amatic SC"],
-        Alegreya: ["Alegreya"],
-        English: ["IM Fell English"],
-        Cormorant: ["Cormorant Garamond"],
-        Lora: ["Lora"],
+        // Montserrat: ["Montserrat"],
+        // Hind: ["Hind"],
+        // Amatic: ["Amatic SC"],
+        // Alegreya: ["Alegreya"],
+        // English: ["IM Fell English"],
+        // Cormorant: ["Cormorant Garamond"],
+        // Lora: ["Lora"],
+        Jost: ["Jost"],
       },
       colors: {
         accentDecoration: "#566E3D",

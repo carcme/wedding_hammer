@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Spin as Hamburger } from "hamburger-react";
 import { FaRegCalendarAlt, FaEnvelope } from "react-icons/fa";
-import Logo from "../assets/logo/hammer3_logo.svg";
+import Logo from "../assets/hammer3_logo.svg";
 import LinksData from "../data/navbarLinks";
 import useScrollPosition from "../hooks/useScrollPosition";
 import {

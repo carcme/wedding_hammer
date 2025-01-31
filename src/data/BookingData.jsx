@@ -10,7 +10,11 @@ export const BookingData = {
           "Our versatile events venue is perfect for all types of occasions, from corporate meetings and conferences to weddings, parties, and everything in between",
           "Whether you're hosting an intimate gathering or a grand celebration, our venue offers the ideal setting for a memorable experience",
         ],
-        intro: [],
+        intro: [
+          "Whatever happened to Jane Templeton? The young maid disappeared without a trace 20 years ago and now your group must find out what happened to her.",
+          "Detective Inspector Duncan Hall has gathered all the suspects to dinner… and none of the guests are who they seem to be.",
+          "Your hosts will guide you through a thrilling crime where each character will play an important role. Enjoy the eerie scenery, the delicious food and the all inclusive drinks.",
+        ],
         image: "wedding_table_2.webp",
         srcset: "pbg2",
         imgAlt: "Detective's crime board",

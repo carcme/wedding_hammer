@@ -12,7 +12,7 @@ const Vendors = () => {
     <>
       {vl.title !== "" && (
         <div className="mx-auto text-center">
-          <h1 className="p-4 font-Alegreya text-4xl font-normal tracking-widest lg:text-6xl">
+          <h1 className="font-Jost p-4 text-4xl font-normal tracking-widest lg:text-6xl">
             {vl.title}
             {vl.subTitle && <h2 className="text-xl">{vl.subTitle}</h2>}
           </h1>
@@ -45,11 +45,11 @@ const Vendors = () => {
                   index % 2 === 0 ? "md:order-first" : ""
                 } `}
               >
-                <h2 className="pb-4 font-Alegreya text-xl font-normal uppercase leading-9 tracking-widest sm:text-4xl">
+                <h2 className="font-Jost pb-4 text-xl font-normal uppercase leading-9 tracking-widest sm:text-4xl">
                   {section.title}
                 </h2>
                 {section.textTop.map((para, i) => (
-                  <p key={i} className="font-Alegreya leading-7 sm:text-xl">
+                  <p key={i} className="font-Jost leading-7 sm:text-xl">
                     {para}
                   </p>
                 ))}
@@ -59,10 +59,7 @@ const Vendors = () => {
                 />
 
                 {section.textBottom.map((para, i) => (
-                  <p
-                    key={i}
-                    className="mt-6 font-Alegreya leading-7 sm:text-xl"
-                  >
+                  <p key={i} className="font-Jost mt-6 leading-7 sm:text-xl">
                     {para}
                   </p>
                 ))}

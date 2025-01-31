@@ -14,11 +14,11 @@ const VendorsSection = ({ sections }) => {
                     sectionIndex > 0 ? "my-16" : ""
                   }`}
                 >
-                  <p className="font-Hind font-bold sm:py-6">{section.stub}</p>
-                  <h1 className="my-2 font-Montserrat text-2xl leading-10 text-gray-700 sm:text-4xl">
+                  <p className="font-Jost font-bold sm:py-6">{section.stub}</p>
+                  <h1 className="font-Jost my-2 text-2xl leading-10 text-gray-700 sm:text-4xl">
                     {section.title}
                   </h1>
-                  <p className="mb-2.5 font-Hind text-[18px] font-thin tracking-widest text-gray-700">
+                  <p className="font-Jost font-normaltracking-widest mb-2.5 pt-6 text-[18px] text-gray-700">
                     {section.tagline}
                   </p>
 

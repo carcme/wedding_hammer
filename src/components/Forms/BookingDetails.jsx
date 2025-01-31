@@ -233,7 +233,7 @@ const BookingDetails = ({ numPlayers, gameTitle, date, bookingText }) => {
         <div ref={confirmRef} className="flex flex-col justify-center py-6">
           {isValid && (
             <div className="animate-txtBlur">
-              <h1 className="font-Montserrat text-5xl font-bold">
+              <h1 className="font-Jost text-5xl font-bold">
                 {bookingText.preivew}
               </h1>
 

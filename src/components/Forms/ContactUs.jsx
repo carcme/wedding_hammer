@@ -46,16 +46,16 @@ const ContactUs = ({ text }) => {
   };
 
   return (
-    <section className="relative text-gray-600 bg-almostWhite ">
-      <div className="container flex flex-wrap max-w-5xl px-5 py-10 mx-auto sm:flex-nowrap">
-        <div className="relative flex items-end justify-start w-full p-10 overflow-hidden rounded-lg lg:w-2/3 md:w-1/2 sm:h-auto h-96 sm:mr-10">
+    <section className="relative bg-almostWhite text-gray-600">
+      <div className="container mx-auto flex max-w-5xl flex-wrap px-5 py-10 sm:flex-nowrap">
+        <div className="relative flex h-96 w-full items-end justify-start overflow-hidden rounded-lg p-10 sm:mr-10 sm:h-auto md:w-1/2 lg:w-2/3">
           {!mapLoaded && (
-            <h2 className="justify-center w-full h-full text-center">
+            <h2 className="h-full w-full justify-center text-center">
               Loading Map
             </h2>
           )}
           <iframe
-            className={`absolute inset-0  ${
+            className={`absolute inset-0 ${
               mapLoaded ? "visible" : "invisible"
             }`}
             width="100%"
@@ -70,8 +70,8 @@ const ContactUs = ({ text }) => {
             onLoad={() => onMapLoaded()}
           ></iframe>
         </div>
-        <div className="flex flex-col w-full mt-8 lg:w-1/3 md:w-1/2 bg-almostWhite md:ml-auto md:py-8 md:mt-0 ">
-          <h2 className="mb-1 text-lg font-medium text-primaryGreen font-Montserrat">
+        <div className="mt-8 flex w-full flex-col bg-almostWhite md:ml-auto md:mt-0 md:w-1/2 md:py-8 lg:w-1/3">
+          <h2 className="font-Jost mb-1 text-lg font-medium text-primaryGreen">
             {text.contactUsTitle}
           </h2>
           <p className="mb-5 leading-relaxed text-neutral-600">
@@ -94,9 +94,9 @@ const ContactUs = ({ text }) => {
               value="Wedding Enquiry - Hammer3"
               {...register("from_name")}
             />
-            <div className="relative mt-6 mb-10 border-b-2 border-transparent focus-within:border-primaryGreenDark">
+            <div className="relative mb-10 mt-6 border-b-2 border-transparent focus-within:border-primaryGreenDark">
               <input
-                className="webkitAutoFillOverride block w-full p-2 px-3 border-0 rounded-0 bg-primaryGreen leading-[1.6] shadow-none focus:outline-none text-almostWhite focus:text-white focus-within:border-red-700"
+                className="webkitAutoFillOverride rounded-0 block w-full border-0 bg-primaryGreen p-2 px-3 leading-[1.6] text-almostWhite shadow-none focus-within:border-red-700 focus:text-white focus:outline-none"
                 type="name"
                 name="name"
                 placeholder=""
@@ -105,15 +105,15 @@ const ContactUs = ({ text }) => {
                 {...register("name", { required: true, maxLength: 100 })}
               />
               <label
-                className="absolute top-0 z-[1] p-2 text-almostWhite transition-all duration-200 ease-linear origin-left"
+                className="absolute top-0 z-[1] origin-left p-2 text-almostWhite transition-all duration-200 ease-linear"
                 htmlFor="name"
               >
                 {text.fullname}
               </label>
             </div>
-            <div className="relative mt-6 mb-10 border-b-2 border-transparent focus-within:border-primaryGreenDark">
+            <div className="relative mb-10 mt-6 border-b-2 border-transparent focus-within:border-primaryGreenDark">
               <input
-                className="webkitAutoFillOverride block w-full p-2 px-3 border-0 rounded-0 bg-primaryGreen leading-[1.6] shadow-none focus:outline-none text-almostWhite focus:text-white "
+                className="webkitAutoFillOverride rounded-0 block w-full border-0 bg-primaryGreen p-2 px-3 leading-[1.6] text-almostWhite shadow-none focus:text-white focus:outline-none"
                 type="email"
                 name="email"
                 placeholder=""
@@ -125,7 +125,7 @@ const ContactUs = ({ text }) => {
                 })}
               />
               <label
-                className="absolute top-0 z-[1] p-2 text-almostWhite transition-all duration-200 ease-linear origin-left"
+                className="absolute top-0 z-[1] origin-left p-2 text-almostWhite transition-all duration-200 ease-linear"
                 htmlFor="email"
               >
                 {text.email}
@@ -133,7 +133,7 @@ const ContactUs = ({ text }) => {
             </div>
             <div className="relative my-6 border-b-2 border-transparent focus-within:border-primaryGreenDark">
               <textarea
-                className="block w-full p-2 px-3 leading-6 border-0 shadow-none bg-primaryGreen text-almostWhite webkitAutoFillOverride rounded-0 focus:outline-none focus:text-almostWhite "
+                className="webkitAutoFillOverride rounded-0 block w-full border-0 bg-primaryGreen p-2 px-3 leading-6 text-almostWhite shadow-none focus:text-almostWhite focus:outline-none"
                 id="comments"
                 type="text"
                 name="comments"
@@ -147,22 +147,22 @@ const ContactUs = ({ text }) => {
               />
               <label
                 htmlFor="comments"
-                className="absolute top-0 z-[1] p-2 text-almostWhite transition-all duration-200 ease-linear origin-left"
+                className="absolute top-0 z-[1] origin-left p-2 text-almostWhite transition-all duration-200 ease-linear"
               >
                 {text.comments}
               </label>
             </div>
             {isValid && (
-              <div className="flex flex-col items-center py-6 animate-txtBlur">
+              <div className="animate-txtBlur flex flex-col items-center py-6">
                 <button
                   type="submit"
-                  className="relative w-full py-3 overflow-hidden text-sm font-medium text-center transition-all border rounded-lg shadow-2xl cursor-pointer text-almostWhite border-primaryGreenDark bg-primaryGreen max-w-96 sm:rounded-xl hover:before:bg-almostWhite before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-almostWhite before:transition-all before:duration-200 hover:text-primaryGreen hover:border-primaryGreenLight hover:before:left-0 hover:before:w-full animate-txtBlur"
+                  className="animate-txtBlur relative w-full max-w-96 cursor-pointer overflow-hidden rounded-lg border border-primaryGreenDark bg-primaryGreen py-3 text-center text-sm font-medium text-almostWhite shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-almostWhite before:transition-all before:duration-200 hover:border-primaryGreenLight hover:text-primaryGreen hover:before:left-0 hover:before:w-full hover:before:bg-almostWhite sm:rounded-xl"
                   disabled={isSubmitting}
                 >
                   <span className="relative z-10">
                     {isSubmitting ? (
                       <svg
-                        className="w-6 h-5 mx-auto animate-spin "
+                        className="mx-auto h-5 w-6 animate-spin"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -190,7 +190,7 @@ const ContactUs = ({ text }) => {
             )}
             {isSubmitSuccessful && isSuccess && (
               <>
-                <div className="flex flex-col items-center justify-center text-center text-white rounded-md">
+                <div className="flex flex-col items-center justify-center rounded-md text-center text-white">
                   <svg
                     width="100"
                     height="100"

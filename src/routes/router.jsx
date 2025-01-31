@@ -7,6 +7,7 @@ import Contact from "./Contact";
 import Vendor from "./Vendor";
 import Error from "./Error";
 import Gallery from "./Gallery";
+import { Temp } from "./Temp";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/gallery",
         element: <Gallery />,
+      },
+      {
+        path: "/temp",
+        element: <Temp />,
       },
       {
         path: "/booking",

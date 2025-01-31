@@ -3,13 +3,14 @@ import { Navigate, useLocation } from "react-router-dom";
 import { getAssetImageURL } from "@/lib/image-util";
 import { FaGamepad, FaEuroSign } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
-import BookingForm from "@/components/Forms/BookingForm";
+import BookingForm from "../components/Forms/BookingForm";
 
 import bookingPageText from "../data/bookingPageText";
-import { BookingData } from "@/data/BookingData";
+import { BookingData } from "../data/BookingData";
 import { getLanguage, useLanguage } from "@/LanguageContext";
 import { Helmet } from "react-helmet-async";
 import helmetData from "@/data/helmetData";
+import TableTemp from "../components/TableTemp";
 
 const Booking = ({}) => {
   const location = useLocation();
@@ -24,7 +25,7 @@ const Booking = ({}) => {
   const heroImage = getAssetImageURL(image);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }, []);
   return (
     <>
@@ -34,7 +35,7 @@ const Booking = ({}) => {
         <meta name="robots" content={meta.robots} />
         <meta name="charSet" content={meta.charset} />
       </Helmet>
-      <div className="bg-almostWhite py-6 sm:py-8">
+      <div className="font-Jost bg-almostWhite py-6 sm:py-8">
         <div className="mx-auto max-w-screen-2xl px-4 pt-24 md:px-8">
           <div className="flex flex-col overflow-hidden rounded-lg bg-primaryGreen sm:flex-row xl:h-96">
             {/* <!-- content - start --> */}
@@ -74,19 +75,20 @@ const Booking = ({}) => {
           </div>
         </div>
       </div>
-      <div className="relative bg-almostWhite text-gray-900">
+      <TableTemp />
+      <div className="font-Jost relative bg-almostWhite text-gray-900">
         <div className="mx-auto flex max-w-screen-lg flex-col justify-between px-4 sm:px-6 lg:px-8">
           {intro.length > 0 && (
             <div className="">
               {intro.map((para, index) => (
-                <h3 key={index} className="pt-4 font-Montserrat sm:text-xl">
+                <h3 key={index} className="pt-4 sm:text-xl">
                   {para}
                 </h3>
               ))}
             </div>
           )}
           <div className="section-divider-white"></div>
-          <div className="pb-20 text-center font-Montserrat text-2xl font-bold sm:text-4xl">
+          <div className="pb-20 text-center text-2xl font-bold text-primaryGreen sm:text-4xl">
             <p>{bookingText.bookNow}</p>
           </div>
           <div className="">
